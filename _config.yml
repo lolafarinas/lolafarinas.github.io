@@ -2,5 +2,5 @@ theme: jekyll-theme-minimal
 title: Lola Fariñas
 description: Feel free to contact for any questions
 
-logo: [Location of the logo]
+logo: /pictures/logo.png
 show_downloads: "false"

@@ -15,7 +15,48 @@
   <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
   <link href="./assets/favicon.ico" rel="icon">
 
-  <title>Lola Fariñas' publications</title>  
+  <title>Publications</title> 
+
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+    <bibtex src="FarinasMD.bib"></bibtex>
+    
+    <script>
+		$(function() {
+		  $("#Fontselector").on("change",function() {
+		    var font = $("#Fontselector option:selected").text();
+		    console.log(font);
+		
+		    $('.title.fonters').each(function() {
+		    	$(this).css("font-family",font);
+		    });
+		  }); 
+		});
+		function reset() {
+			$("select").each(function () {
+			  localStorage.setItem($(this).attr("id"),"");
+			  $(this).val("");
+			}); 
+			$("#searchbar").val("");
+			$("#searchbar").trigger('change');
+		}
+    </script>
+    
+    <style>
+	    html,body,span,h1 {
+	    	font-family: "Times New Roman", Times, serif;
+	    	font-size: 17px;
+	    }
+	    bibtex { display: none; }
+	    .searchbar { margin-left:0px;}
+	    #bibtex_errors { margin-top:10px; color: red;}
+	    h1.header {margin-left:8px;}
+	    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
+    </style>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
+    
 
 <link href="./main.3f6952e4.css" rel="stylesheet"></head>
 
@@ -64,51 +105,17 @@
 </header>
 
 <div class="section-container">
-  
-<!-- Add your site or app content here -->
-    
-    <script src="/Publications/libs/jquery.min.js"></script>
-    <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-    <bibtex src="FarinasMD.bib"></bibtex>
-    
-    <script>
-		$(function() {
-		  $("#Fontselector").on("change",function() {
-		    var font = $("#Fontselector option:selected").text();
-		    console.log(font);
-		
-		    $('.title.fonters').each(function() {
-		    	$(this).css("font-family",font);
-		    });
-		  }); 
-		});
-		function reset() {
-			$("select").each(function () {
-			  localStorage.setItem($(this).attr("id"),"");
-			  $(this).val("");
-			}); 
-			$("#searchbar").val("");
-			$("#searchbar").trigger('change');
-		}
-    </script>
-    
-    <style>
-	    html,body,span,h1 {
-	    	font-family: "Times New Roman", Times, serif;
-	    	font-size: 17px;
-	    }
-	    bibtex { display: none; }
-	    .searchbar { margin-left:0px;}
-	    #bibtex_errors { margin-top:10px; color: red;}
-	    h1.header {margin-left:8px;}
-	    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
-    </style>
-    
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
-    
-  </head>
-<body>
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">01 : About me</h1>
+          </div>
+          
+          <div class="row">
+            <div class="col-md-10 col-md-offset-1">
+              <div class="row">
+                <div class="col-xs-12 col-md-6">
 <a name="top"></a>
 <h1 class="header">Manuela Veloso's Publications <br> 
      <small> <a href="http://www.jpmorgan.com/insights/technology/artificial-intelligence/ai-research-publications">
@@ -215,15 +222,21 @@
   
 </div>
 <!-- Latest compiled and minified JavaScript -->
-<script src="/Publications/libs/bootstrap.min.js"></script>
-</body>
-</html>
-
-
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</div>
+                <div class="col-xs-12 col-md-6">
+                  <img src="./assets/images/profil.jpg" class="img-responsive" alt="">
+                </div>
+              </div>
+            </div>
+          </div>
+          
+          
+       </div>
       </div>
     </div>
   </div>
-</div>
+
 
 <footer class="footer-container text-center">
   <div class="container">
@@ -257,7 +270,3 @@
 --> <script type="text/javascript" src="./main.70a66962.js"></script></body>
 
 </html>
-
-
-
-

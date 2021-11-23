@@ -18,7 +18,7 @@
   <title>Publications</title> 
 
 	<script src="/Publications/libs/jquery.min.js"></script>
-    <script src="/Publications/libs/bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+    <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
     <bibtex src="/Publications/FarinasMD.bib"></bibtex>
     
     <script>
@@ -169,7 +169,11 @@
 
   <div class="if bibtex_template" style="display: none;">
     <ul> <li>
-
+      <span class="if journal !nolink">
+        <a class="bibtexVar" href="http://www.cs.cmu.edu/~mmv/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
+            <span style="text-decoration: underline;" class="title"></span>,
+        </a>
+      </span>
       <span class="if title nolink">
             <span class="title"></span>,
       </span>
@@ -206,7 +210,7 @@
   
 </div>
 <!-- Latest compiled and minified JavaScript -->
-<script src="/Publications/libs/bootstrap.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </div>
 
 

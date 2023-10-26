@@ -129,4 +129,44 @@
               <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
             </div>
             <div style="float: left;">
-              <select id="authorselectfirst" class="btn bibtex_search
+              <select id="authorselectfirst" class="btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" extra="first" search="author">
+                <option value="">Search First Author</option>
+              </select>
+            </div>
+            <!-- Add more select elements here for search options -->
+            <!-- ... -->
+            <div style="float: left;">
+              <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
+              <span class="help-block">Example: journal 2019 (finds the intersection of the two terms)</span>
+            </div>
+          </div>
+        </div>
+        <div class="bibtex_structure">
+          <div class="group year" extra="ASC number">
+            <a href="#top" style="display: inline"><em>(Top of the page)</em></a>
+            <div style="padding-bottom: 10px;"></div>
+            <div class="sort journal" extra="DESC string">
+              <div class="templates"></div>
+            </div>
+          </div>
+        </div>
+        <div id="bibtex_display">
+          <!-- Your publication entries will be displayed here -->
+        </div>
+      </div>
+    </div>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  </body>
+
+  <!-- Footer Section -->
+  <footer class="footer-container text-center">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/" title="Create website with free html template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+        </div>
+      </div>
+    </div>
+  </footer>
+</html>

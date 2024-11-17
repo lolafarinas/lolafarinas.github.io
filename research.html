@@ -4,10 +4,10 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Página personal de Lola Fariñas, PhD. Investigadora en [campo de investigación].">
+  <meta name="description" content="Lola Fariñas, PhD. Researcher in [Your Field]. Explore my research projects, publications, and outreach activities.">
   <meta name="author" content="Lola Fariñas">
   <meta name="robots" content="index, follow">
-  <title>Lola Fariñas, PhD.</title>
+  <title>Lola Fariñas, PhD</title>
   
   <!-- Favicon -->
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
@@ -17,13 +17,13 @@
 </head>
 
 <body>
-  <!-- Borde decorativo del sitio -->
+  <!-- Site Decorative Borders -->
   <div id="site-border-left"></div>
   <div id="site-border-right"></div>
   <div id="site-border-top"></div>
   <div id="site-border-bottom"></div>
 
-  <!-- Encabezado y Menú -->
+  <!-- Header and Navigation -->
   <header>
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
@@ -35,68 +35,88 @@
         </button>
         <div class="collapse navbar-collapse" id="navbar-collapse">
           <ul class="nav navbar-nav">
-            <li><a href="/index.html">Inicio</a></li>
-            <li><a href="/about.html">Sobre mí</a></li>
-            <li><a href="/research.html">Investigación</a></li>
-            <li><a href="/projects.html">Proyectos</a></li>
-            <li><a href="/publications.html">Publicaciones</a></li>
-            <li><a href="/contact.html">Contacto</a></li>
+            <li><a href="/index.html">Home</a></li>
+            <li><a href="/about.html">About Me</a></li>
+            <li><a href="/research.html">Research</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/publications.html">Publications</a></li>
+            <li class="dropdown-submenu">
+              <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Experience <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/experience.html#education">Education</a></li>
+                <li><a href="/experience.html#career">Career</a></li>
+                <li><a href="/experience.html#awards">Awards</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                Outreach <span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/outreach.html#talks">Talks</a></li>
+                <li><a href="/outreach.html#media">Media</a></li>
+                <li><a href="/outreach.html#podcast">Podcast</a></li>
+              </ul>
+            </li>
+            <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
       </div>
     </nav>
   </header>
 
-  <!-- Sección principal -->
+  <!-- Main Section -->
   <main>
     <div class="section-container">
       <div class="container">
         <div class="row">
           <div class="col-sm-8 col-sm-offset-2 section-container-spacer text-center">
-            <h1 class="h2">Proyectos Destacados</h1>
-            <p>Descubre algunos de los proyectos en los que he trabajado, enfocados en [temas principales de tu investigación].</p>
+            <h1 class="h2">Highlighted Projects</h1>
+            <p>Explore some of my key projects focused on [main themes of your research].</p>
           </div>
 
-          <!-- Carrusel de Proyectos -->
+          <!-- Projects Carousel -->
           <div class="col-md-12">
             <div id="projectsCarousel" class="carousel slide projects-carousel">
               <div class="carousel-inner">
-                <!-- Proyecto 1 -->
+                <!-- Project 1 -->
                 <div class="item active">
                   <div class="row">
                     <div class="col-sm-4">
                       <a href="/projects/2020_CITRUS.html">
-                        <img src="./assets/images/CitRUS_1.jpg" alt="Imagen del proyecto CitRUS" class="img-responsive">
+                        <img src="./assets/images/CitRUS_1.jpg" alt="CitRUS Project Image" class="img-responsive">
                       </a>
                       <div class="card-container">
                         <h3>CitRUS</h3>
-                        <p>Espectroscopía ultrasónica resonante para la detección de estrés hídrico en cítricos.</p>
-                        <a href="/projects/2020_CITRUS.html" class="btn btn-default">Ver más</a>
+                        <p>Non-Contact Resonant Ultrasound Spectroscopy for water stress detection in citrus crops.</p>
+                        <a href="/projects/2020_CITRUS.html" class="btn btn-default">Learn more</a>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <a href="/projects/2019_ULTRATEX.html">
-                        <img src="./assets/images/ultratex.jpg" alt="Imagen del proyecto ULTRATEX" class="img-responsive">
+                        <img src="./assets/images/ultratex.jpg" alt="ULTRATEX Project Image" class="img-responsive">
                       </a>
                       <div class="card-container">
                         <h3>ULTRATEX</h3>
-                        <p>Innovaciones en textiles ultrasónicos para aplicaciones médicas.</p>
-                        <a href="/projects/2019_ULTRATEX.html" class="btn btn-default">Ver más</a>
+                        <p>Innovative ultrasonic textiles for medical applications.</p>
+                        <a href="/projects/2019_ULTRATEX.html" class="btn btn-default">Learn more</a>
                       </div>
                     </div>
                     <div class="col-sm-4">
                       <a href="/projects/2019_FAT.html">
-                        <img src="./assets/images/fat.jpg" alt="Imagen del proyecto FAT" class="img-responsive">
+                        <img src="./assets/images/fat.jpg" alt="FAT Project Image" class="img-responsive">
                       </a>
                       <div class="card-container">
                         <h3>FAT</h3>
-                        <p>Estudio sobre la funcionalidad adaptativa de tejidos en ambientes extremos.</p>
-                        <a href="/projects/2019_FAT.html" class="btn btn-default">Ver más</a>
+                        <p>Investigating adaptive fabric functionality in extreme environments.</p>
+                        <a href="/projects/2019_FAT.html" class="btn btn-default">Learn more</a>
                       </div>
                     </div>
                   </div>
                 </div>
-                <!-- Añade más proyectos si es necesario -->
+                <!-- Add more projects here if needed -->
               </div>
               <a class="left carousel-control" href="#projectsCarousel" data-slide="prev">‹</a>
               <a class="right carousel-control" href="#projectsCarousel" data-slide="next">›</a>
@@ -107,12 +127,12 @@
     </div>
   </main>
 
-  <!-- Pie de página -->
+  <!-- Footer -->
   <footer class="footer-container text-center">
     <div class="container">
       <div class="row">
         <div class="col-xs-12">
-          <p>© Lola Fariñas, PhD. | Creado con <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a></p>
+          <p>© Lola Fariñas, PhD. | Created with <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a></p>
         </div>
       </div>
     </div>

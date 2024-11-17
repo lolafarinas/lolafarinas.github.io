@@ -132,19 +132,19 @@
 <!-- JavaScript for page initialization -->
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    // Function to fetch and display publications from the .bib file
-    fetch('LolaFarinas_biblio.bib')  // Assuming the .bib file is named "publications.bib" and is in the same directory
+    // Función para obtener y mostrar las publicaciones desde el archivo .bib
+    fetch('LolaFarinas_biblio.bib')  // Asegúrate de que el archivo esté en el mismo directorio
       .then(response => response.text())
       .then(bibtexData => {
-        const bibtex = BibtexParser(bibtexData);  // Parse the .bib file
-        const publications = bibtex.entries;
+        const bibtex = new Bibtex();  // Crear una instancia de Bibtex
+        const publications = bibtex.parse(bibtexData);  // Parsear el archivo .bib
         displayPublications(publications);
       });
 
-    // Function to display publications in the table
+    // Función para mostrar las publicaciones en la tabla
     function displayPublications(publications) {
       const tableBody = document.getElementById('publications-table').getElementsByTagName('tbody')[0];
-      tableBody.innerHTML = '';  // Clear the table before adding new data
+      tableBody.innerHTML = '';  // Limpiar la tabla antes de agregar nuevos datos
 
       publications.forEach(pub => {
         const title = pub.entryTags.title || 'No Title';
@@ -158,16 +158,16 @@
       });
     }
 
-    // Function to filter publications by year
+    // Función para filtrar publicaciones por año
     window.filterByYear = function () {
       const yearFilter = document.getElementById('year-filter').value;
-      fetch('LolaFarinas_biblio.bib')  // Fetch the .bib file again (could be optimized)
+      fetch('LolaFarinas_biblio.bib')  // Fetch el archivo .bib de nuevo (esto podría optimizarse)
         .then(response => response.text())
         .then(bibtexData => {
-          const bibtex = BibtexParser(bibtexData);
-          const publications = bibtex.entries.filter(pub => {
+          const bibtex = new Bibtex();
+          const publications = bibtex.parse(bibtexData).filter(pub => {
             const pubYear = pub.entryTags.year;
-            return pubYear && pubYear.startsWith(yearFilter);  // Filter by year (starts with)
+            return pubYear && pubYear.startsWith(yearFilter);  // Filtrar por año
           });
           displayPublications(publications);
         });

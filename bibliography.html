@@ -136,7 +136,7 @@
     fetch('LolaFarinas_biblio.bib')  // Asegúrate de que el archivo esté en el mismo directorio
       .then(response => response.text())
       .then(bibtexData => {
-        const bibtex = new Bibtex();  // Crear una instancia de Bibtex
+        const bibtex = new BibtexParser();  // Usar BibtexParser en vez de Bibtex()
         const publications = bibtex.parse(bibtexData);  // Parsear el archivo .bib
         displayPublications(publications);
       });
@@ -164,7 +164,7 @@
       fetch('LolaFarinas_biblio.bib')  // Fetch el archivo .bib de nuevo (esto podría optimizarse)
         .then(response => response.text())
         .then(bibtexData => {
-          const bibtex = new Bibtex();
+          const bibtex = new BibtexParser();
           const publications = bibtex.parse(bibtexData).filter(pub => {
             const pubYear = pub.entryTags.year;
             return pubYear && pubYear.startsWith(yearFilter);  // Filtrar por año

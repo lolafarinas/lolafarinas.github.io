@@ -1,75 +1,210 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for character set, viewport, and other properties -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications | Lola Fariñas, PhD</title>
-  <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/4.6.2/css/bootstrap.min.css" rel="stylesheet">
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+
+  <!-- Prevent tap highlight on Internet Explorer -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <!-- Favicon and title for the webpage -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Lola Fariñas, PhD.</title>  
+
+  <!-- Include the main stylesheet for the webpage -->
+  <link href="./main.3f6952e4.css" rel="stylesheet">
 </head>
-<body>
+
+<body class="">
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+
+<!-- Header section with navigation menu -->
 <header>
-  <nav class="navbar navbar-expand-lg navbar-light bg-light">
-    <a class="navbar-brand" href="#">Lola Fariñas</a>
-    <div class="collapse navbar-collapse">
-      <ul class="navbar-nav">
-        <li class="nav-item"><a class="nav-link" href="/index.html">Home</a></li>
-        <li class="nav-item"><a class="nav-link" href="/about.html">About Me</a></li>
-        <li class="nav-item"><a class="nav-link" href="/research.html">Research</a></li>
-        <li class="nav-item active"><a class="nav-link" href="/publications.html">Publications</a></li>
-        <li class="nav-item"><a class="nav-link" href="/experience.html">Experience</a></li>
-        <li class="nav-item"><a class="nav-link" href="/outreach.html">Outreach</a></li>
-        <li class="nav-item"><a class="nav-link" href="/contact.html">Contact</a></li>
-      </ul>
+  <nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Navigation menu -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/index.html" title="">01 : Home</a></li>
+          <li><a href="/about.html" title="">02 : About me</a></li>
+          <li><a href="/research.html" title="">03 : Research</a></li>
+          <li><a href="/bibliography.html" title="">04 : Publications</a></li>
+          <!-- Submenu for "Experience" -->
+          <li class="dropdown-submenu">
+            <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="nav-label">05 : Experience</span><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/experience.html#Ordered">05.1 Education</a></li>
+              <li><a href="/experience.html#Number">05.2 Career</a></li>
+              <li><a href="/experience.html#Icons">05.3 Awards</a></li>
+            </ul>
+          </li>
+          <!-- Submenu for "Outreach" -->
+          <li class="dropdown-submenu">
+            <a href="/outreach.html" class a="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="nav-label">06 : Outreach</span><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
+              <li><a href="/outreach.html#Media">06.2 Media</a></li>
+              <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
+            </ul>
+          </li>
+          <li><a href="/contact.html" title="">07 : Contact</a></li>
+          <li><a href="/components.html" title="">08 : Components</a></li>
+        </ul>
+      </div>
     </div>
   </nav>
 </header>
 
-<div class="container mt-4">
-  <h1 class="text-center">Publications</h1>
-  <p class="text-center">Automatically fetched from <a href="https://orcid.org" target="_blank">ORCID</a></p>
-  
-  <div id="publications" class="row">
-    <!-- Publications will be loaded here -->
-  </div>
+<!-- Publications section -->
+<div class="section-container">
+    <div class="container">
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="section-container-spacer text-center">
+            <h1 class="h2">04 : Publications</h1>
+          </div>
+
+          <!-- Publications Table -->
+          <table id="publications-table" class="table table-striped">
+            <thead>
+              <tr>
+                <th>Title</th>
+                <th>Journal</th>
+                <th>Year</th>
+              </tr>
+            </thead>
+            <tbody>
+              <!-- Dynamic content will be inserted here -->
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
 </div>
 
+<!-- Footer section -->
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/" title="Create website with free HTML template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript for page initialization -->
 <script>
-  const orcidID = "0000-0001-6370-1283"; // Replace with your ORCID ID
-  const orcidAPI = `https://pub.orcid.org/v3.0/${orcidID}/works`;
-
-  fetch(orcidAPI, { headers: { Accept: "application/json" } })
-    .then(response => response.json())
-    .then(data => {
-      const publications = data["group"];
-      const container = document.getElementById("publications");
-
-      publications.forEach(pub => {
-        const title = pub["work-summary"][0]["title"]["title"]["value"];
-        const date = pub["work-summary"][0]["publication-date"];
-        const year = date ? date["year"]["value"] : "N/A";
-        const url = pub["work-summary"][0]["url"]?.value || "#";
-
-        const pubHTML = `
-          <div class="col-md-4 mb-4">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">${title}</h5>
-                <p class="card-text"><strong>Year:</strong> ${year}</p>
-                <a href="${url}" class="btn btn-primary" target="_blank">Read More</a>
-              </div>
-            </div>
-          </div>
-        `;
-
-        container.insertAdjacentHTML("beforeend", pubHTML);
-      });
-    })
-    .catch(error => console.error("Error fetching ORCID data:", error));
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navActivePage();
+  });
 </script>
 
-<footer class="text-center mt-4">
-  <p>© Lola Fariñas</p>
-</footer>
+<!-- Google Analytics (You need to replace UA-XXXXX-X with your own site's ID) -->
+<!--
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga('send', pageview');
+</script>
+-->
+
+<!-- JavaScript for API and table functionality -->
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+    const ORCID_ID = '0000-0001-6370-1283'; // Introduce aquí tu ORCID ID
+    const CLIENT_ID = 'APP-2KGNXIHE6PDQUEN1'; // Introduce tu client ID aquí
+    const CLIENT_SECRET = '0b29d319-5e3f-4902-a384-b449ab382b22'; // Introduce tu client secret aquí
+    const REDIRECT_URI = 'https://lolafarinas.github.io/publications.html'; // Asegúrate que la URI de redirección sea la correcta
+
+    function getPublications(token) {
+      const ORCID_API_URL = `https://api.orcid.org/v3.0/${ORCID_ID}/works`; // Cambia el ORCID_ID si es necesario
+      fetch(ORCID_API_URL, {
+        method: 'GET',
+        headers: {
+          'Authorization': `Bearer ${token}`
+        }
+      })
+      .then(response => response.json())
+      .then(data => displayPublications(data))
+      .catch(error => console.error('Error fetching publications:', error));
+    }
+
+    function displayPublications(data) {
+      const tableBody = document.getElementById('publications-table').getElementsByTagName('tbody')[0];
+      tableBody.innerHTML = ''; // Limpiar la tabla antes de mostrar nuevos datos
+
+      if (data.group) {
+        data.group.forEach(publication => {
+          const title = publication['work-summary'][0]['title']['title']['value'];
+          const journal = publication['work-summary'][0]['journal-title'] ? publication['work-summary'][0]['journal-title']['value'] : 'N/A';
+          const year = publication['work-summary'][0]['publication-date']['year']['value'];
+
+          const row = tableBody.insertRow();
+          row.insertCell(0).textContent = title;
+          row.insertCell(1).textContent = journal;
+          row.insertCell(2).textContent = year;
+        });
+      } else {
+        const row = tableBody.insertRow();
+        row.insertCell(0).textContent = 'No publications found';
+        row.insertCell(1).textContent = '';
+        row.insertCell(2).textContent = '';
+      }
+    }
+
+    // Aquí gestionas la autenticación y obtienes el token
+    function authenticateAndGetPublications() {
+      const code = new URLSearchParams(window.location.search).get('code');
+      if (code) {
+        const tokenRequest = {
+          client_id: CLIENT_ID,
+          client_secret: CLIENT_SECRET,
+          code: code,
+          redirect_uri: REDIRECT_URI,
+          grant_type: 'authorization_code'
+        };
+
+        fetch('https://orcid.org/oauth/token', {
+          method: 'POST',
+          body: new URLSearchParams(tokenRequest)
+        })
+        .then(response => response.json())
+        .then(data => getPublications(data.access_token))
+        .catch(error => console.error('Error fetching token:', error));
+      }
+    }
+
+    authenticateAndGetPublications(); // Llama a esta función cuando el código de autorización esté disponible
+  });
+</script>
+
+<!-- JavaScript for additional functionality -->
+<script type="text/javascript" src="./main.70a66962.js"></script>
 </body>
 </html>

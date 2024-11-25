@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Publications | Lola Fariñas, PhD</title>  
+  <link href="https://lolafarinas.github.io/main.3f6952e4.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
+  <script src="/Publications/libs/jquery.min.js"></script>
+  <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 17px;
+      line-height: 1.6;
+    }
+    .searchbar {
+      margin-bottom: 20px;
+    }
+    .header {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .btn {
+      margin-right: 10px;
+    }
+    #bibtex_display {
+      margin-top: 20px;
+    }
+    footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #f8f8f8;
+      border-top: 1px solid #e7e7e7;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Site Borders -->
+  <div id="site-border-left"></div>
+  <div id="site-border-right"></div>
+  <div id="site-border-top"></div>
+  <div id="site-border-bottom"></div>
+
+  <!-- Header Section -->
+  <header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/index.html">01 : Home</a></li>
+            <li><a href="/about.html">02 : About Me</a></li>
+            <li><a href="/research.html">03 : Research</a></li>
+            <li class="active"><a href="/Publications/bibliography.html">04 : Publications</a></li>
+            <li><a href="/experience.html">05 : Experience</a></li>
+            <li><a href="/outreach.html">06 : Outreach</a></li>
+            <li><a href="/contact.html">07 : Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Publications Section -->
+  <div class="section-container">
+    <div class="container">
+      <h2 class="header text-center">Lola Fariñas' Publications</h2>
+      <p class="text-center">
+        Explore my published works. For a complete list, visit my 
+        <a href="https://scholar.google.com/citations?hl=es&user=RVHxAjEAAAAJ" target="_blank">Google Scholar</a> profile.
+      </p>
+      
+      <div class="searchbar">
+        <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
+        <select id="authorselectfirst" class="btn bibtex_search bibtex_author" search="author">
+          <option value="">Search by First Author</option>
+        </select>
+        <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
+      </div>
+
+      <div id="bibtex_display">
+        <!-- Dynamic BibTeX content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer Section -->
+  <footer class="footer-container text-center">
+    <div class="container">
+      <p>© Lola Fariñas | Website created with 
+        <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a> / 
+        <a href="https://www.unsplash.com/" target="_blank">Unsplash</a>
+      </p>
+    </div>
+  </footer>
+
+  <!-- JavaScript -->
+  <script>
+    $(document).ready(function () {
+      fetch('/Publications/FarinasMD.bib')
+        .then(response => response.text())
+        .then(bibtexData => {
+          // Process BibTeX data here
+        })
+        .catch(error => console.error('Error loading .bib file:', error));
+    });
+
+    function reset() {
+      $('#searchbar').val('');
+      $('#authorselectfirst').val('');
+    }
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+</body>
+</html>

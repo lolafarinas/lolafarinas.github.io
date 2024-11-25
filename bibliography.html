@@ -133,7 +133,7 @@
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     // Función para obtener y mostrar las publicaciones desde el archivo .bib
-    fetch('LolaFarinas_biblio.bib')  // Asegúrate de que el archivo esté en el mismo directorio
+    fetch('test_biblio.bib')  // Asegúrate de que el archivo esté en el mismo directorio
       .then(response => response.text())
       .then(bibtexData => {
         const publications = BibtexParser.parse(bibtexData);  // Usar directamente la función 'parse' de BibtexParser
@@ -160,7 +160,7 @@
     // Función para filtrar publicaciones por año
     window.filterByYear = function () {
       const yearFilter = document.getElementById('year-filter').value;
-      fetch('LolaFarinas_biblio.bib')  // Fetch el archivo .bib de nuevo (esto podría optimizarse)
+      fetch('test_biblio.bib')  // Fetch el archivo .bib de nuevo (esto podría optimizarse)
         .then(response => response.text())
         .then(bibtexData => {
           const publications = BibtexParser.parse(bibtexData).filter(pub => {

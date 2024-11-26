@@ -1,193 +1,162 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <!-- Meta tags for character set, viewport, and other properties -->
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developed by Orson.io team" name="author">
 
-  <!-- Prevent tap highlight on Internet Explorer -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <!-- Favicon and title for the webpage -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-  <title>Lola Fariñas, PhD.</title>  
-
-  <!-- Include the main stylesheet for the webpage -->
-  <link href="./main.3f6952e4.css" rel="stylesheet">
-
-  <!-- Include BibTeX.js for parsing .bib files -->
-  <script src="https://cdn.jsdelivr.net/npm/bibtex-js@2.0.4/bibtex.min.js "></script>
-  
-  <style>
-    .filter-container {
-      margin-bottom: 20px;
-    }
-  </style>
-</head>
-
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
+<html xmlns="http://www.w3.org/1999/xhtml"> 
+  <head>
+    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
+    <meta http-equiv="cache-control" content="no-cache" /> 
+    <title> 
+      Manuela Velosos's Publications 
+    </title>
+    
+    <script src="/Publications/libs/jquery.min.js"></script>
+    <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+    <bibtex src="LolaFarinas_biblio.bib"></bibtex>
+    
+    <script>
+		$(function() {
+		  $("#Fontselector").on("change",function() {
+		    var font = $("#Fontselector option:selected").text();
+		    console.log(font);
+		
+		    $('.title.fonters').each(function() {
+		    	$(this).css("font-family",font);
+		    });
+		  }); 
+		});
+		function reset() {
+			$("select").each(function () {
+			  localStorage.setItem($(this).attr("id"),"");
+			  $(this).val("");
+			}); 
+			$("#searchbar").val("");
+			$("#searchbar").trigger('change');
+		}
+    </script>
+    
+    <style>
+	    html,body,span,h1 {
+	    	font-family: "Times New Roman", Times, serif;
+	    	font-size: 17px;
+	    }
+	    bibtex { display: none; }
+	    .searchbar { margin-left:0px;}
+	    #bibtex_errors { margin-top:10px; color: red;}
+	    h1.header {margin-left:8px;}
+	    h1.YEAR { font-size: 17px; font-weight: bold; display: inline; margin-left:8px;}
+    </style>
+    
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
+    
+  </head>
 <body>
-<div id="site-border-left"></div>
-<div id="site-border-right"></div>
-<div id="site-border-top"></div>
-<div id="site-border-bottom"></div>
+<a name="top"></a>
+<h1 class="header">Manuela Veloso's Publications <br> 
+     <small> <a href="http://www.jpmorgan.com/insights/technology/artificial-intelligence/ai-research-publications">
+      Additional publications </a>
+      at <a href="http://jpmorgan.com/ai"> JPMorgan AI
+      Research </a></small> 
+</h1>
+<br>
+<div class="container-fluid">
+	<div class="searchbar">
+		<div style="float:left;">
+			<button type="button" class="btn btn-default" onclick="reset()">Reset</button>
+		</div>
+		<div style="float:left;">
+			<select id="authorselectfirst" class="btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" extra="first" search="author">
+			  <option value="">Search First Author</option>
+			</select>
+		</div>
+		<div style="float:left;">
+			<select id="authorselect" class="btn bibtex_search bibtex_author" style="border: 1px solid lightgrey;" search="author">
+			  <option value="">Search Author</option>
+			</select>
+		</div>
+		<div style="float:left;">
+			<select id="topicselect" class="btn
+							bibtex_search"
+				style="border: 1px solid lightgrey;" search="topic">
+			  <option value="">Search Topic</option>
+			  <!-- Add topic values here -->
+			  <option value="test1">Test1</option>
+			  <option value="test2">Test2</option>
+			  <option value="Autonomy">Autonomy</option>
+			  <option value="Symbiotic">Symbiotic Autonomy</option>
+			  <option value="CoBot|Episodic|Service|Insights|Model-Instance|Diverse">CoBot</option>
+			  <option value="Learning">Learning</option>
+			  <option value="Multiagent">Multiagent Systems</option>
+			  <option value="Multi-robot|Multirobot|soccer|Multiagent">Multirobot Systems</option>
+			  <option value="Planning">Planning</option>
+			  <option value="Robot">Autonomous Robots</option>
+			  <option value="Localization">Robot Localization</option>
+			  <option value="Soccer|Multi-robot">Robot Soccer</option>
+			  <option value="Vision">Vision</option>
+			</select>
+		</div>
+		<div style="float:left;">
+			<input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
+			<span class="help-block">Example: journal 2015 (finds the intersection of the two terms)</span>
+		</div>
+	</div>
+</div>
 
-<!-- Header section with navigation menu -->
-<header>
-  <nav class="navbar navbar-fixed-top navbar-default">
-    <div class="container">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-
-      <!-- Navigation menu -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/index.html" title="">01 : Home</a></li>
-          <li><a href="/about.html" title="">02 : About me</a></li>
-          <li><a href="/research.html" title="">03 : Research</a></li>
-          <li><a href="/publications.html" title="">04 : Publications</a></li>
-          <!-- Submenu for "Experience" -->
-          <li class="dropdown-submenu">
-            <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="nav-label">05 : Experience</span><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/experience.html#Ordered">05.1 Education</a></li>
-              <li><a href="/experience.html#Number">05.2 Career</a></li>
-              <li><a href="/experience.html#Icons">05.3 Awards</a></li>
-            </ul>
-          </li>
-          <!-- Submenu for "Outreach" -->
-          <li class="dropdown-submenu">
-            <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="nav-label">06 : Outreach</span><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
-              <li><a href="/outreach.html#Media">06.2 Media</a></li>
-              <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
-            </ul>
-          </li>
-          <li><a href="/contact.html" title="">07 : Contact</a></li>
-          <li><a href="/components.html" title="">08 : Components</a></li>
-        </ul>
+<div class="bibtex_structure">
+  <div class="group year" extra="ASC number">
+  	  <a href="#top" style="display: inline"><em>(Top of the page)</em></a>
+  	  <div style="padding-bottom:10px;"></div>
+  	  <div class="sort journal" extra="DESC string">
+      	<div class="templates"></div>
       </div>
-    </div>
-  </nav>
-</header>
-
-<!-- Publications section -->
-<div class="section-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="section-container-spacer text-center">
-          <h1 class="h2">04 : Publications</h1>
-        </div>
-
-        <!-- Filter Container -->
-        <div class="filter-container">
-          <label for="year-filter">Filter by year: </label>
-          <input type="number" id="year-filter" placeholder="Enter year" class="form-control" style="width: 200px; display: inline-block;">
-          <button onclick="filterByYear()" class="btn btn-primary">Filter</button>
-        </div>
-
-        <!-- Publications Table -->
-        <table id="publications-table" class="table table-striped">
-          <thead>
-            <tr>
-              <th>Title</th>
-              <th>Journal</th>
-              <th>Year</th>
-            </tr>
-          </thead>
-          <tbody>
-            <!-- Publications will be loaded here -->
-          </tbody>
-        </table>
-      </div>
-    </div>
   </div>
 </div>
 
-<!-- Footer section -->
-<footer class="footer-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/" title="Create website with free HTML template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+<div id="bibtex_display">
+
+  <div class="if bibtex_template" style="display: none;">
+    <ul> <li>
+      <span class="if journal !nolink">
+        <a class="bibtexVar" href="http://www.cs.cmu.edu/~mmv/papers/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
+            <span style="text-decoration: underline;" class="title"></span>,
+        </a>
+      </span>
+      <span class="if title nolink">
+            <span class="title"></span>,
+      </span>
+      <div class="if author">
+        <span class="author"></span>
       </div>
-    </div>
+      <div>
+        <span class="if journal"><em><span class="journal"></span></em>,</span>
+        <span class="if booktitle">In <em><span class="booktitle"></span></em>,</span>
+        <span class="if editor"><span class="editor"></span> (editors),</span>
+        <span class="if publisher"><em><span class="publisher"></span></em>,</span>
+        <span class="if !journal number">Technical report <span class="number"></span>,</span>
+        <span class="if institution"><span class="institution"></span>,</span>
+        <span class="if address"><span class="address"></span>,</span>
+        <span class="if volume"><span class="volume"></span>,</span>
+        <span class="if journal number">(<span class="number"></span>),</span>
+        <span class="if pages"> pages <span class="pages"></span>,</span>
+        <span class="if month"><span class="month"></span>,</span>
+        <span class="if year"><span class="year"></span>.</span>
+        <span class="if note"><span class="note"></span>.</span>
+        <a class="bibtexVar" role="button" data-toggle="collapse" href="#bib+BIBTEXKEY+" aria-expanded="false" aria-controls="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+		  [bib]
+		</a>
+      </div>
+      <div class="bibtexVar collapse" id="bib+BIBTEXKEY+" extra="BIBTEXKEY">
+		  <div class="well">
+		    <pre><span class="bibtexraw noread"></span></pre>
+		  </div>
+	  </div>
+      <div style="display:none"><span class="bibtextype"></span></div>
+      <div style="display:none"><span class="if topic"><span class="topic"></span></span></div>
+    </li></ul>
   </div>
-</footer>
-
-<!-- JavaScript for page initialization -->
-<script>
-  document.addEventListener("DOMContentLoaded", function () {
-    // Función para obtener y mostrar las publicaciones desde el archivo .bib
-    fetch('test_biblio.bib')  // Asegúrate de que el archivo esté en el mismo directorio
-      .then(response => response.text())
-      .then(bibtexData => {
-        const publications = BibtexParser.parse(bibtexData);  // Usar directamente la función 'parse' de BibtexParser
-        displayPublications(publications);
-      });
-
-    // Función para mostrar las publicaciones en la tabla
-    function displayPublications(publications) {
-      const tableBody = document.getElementById('publications-table').getElementsByTagName('tbody')[0];
-      tableBody.innerHTML = '';  // Limpiar la tabla antes de agregar nuevos datos
-
-      publications.forEach(pub => {
-        const title = pub.entryTags.title || 'No Title';
-        const journal = pub.entryTags.journal || 'N/A';
-        const year = pub.entryTags.year || 'N/A';
-
-        const row = tableBody.insertRow();
-        row.insertCell(0).textContent = title;
-        row.insertCell(1).textContent = journal;
-        row.insertCell(2).textContent = year;
-      });
-    }
-
-    // Función para filtrar publicaciones por año
-    window.filterByYear = function () {
-      const yearFilter = document.getElementById('year-filter').value;
-      fetch('test_biblio.bib')  // Fetch el archivo .bib de nuevo (esto podría optimizarse)
-        .then(response => response.text())
-        .then(bibtexData => {
-          const publications = BibtexParser.parse(bibtexData).filter(pub => {
-            const pubYear = pub.entryTags.year;
-            return pubYear && pubYear.startsWith(yearFilter);  // Filtrar por año
-          });
-          displayPublications(publications);
-        });
-    };
-  });
-</script>
-
-<!-- Google Analytics (You need to replace UA-XXXXX-X with your own site's ID) -->
-<!--
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', pageview');
-</script>
--->
-
-<!-- JavaScript for additional functionality -->
-<script type="text/javascript" src="./main.70a66962.js"></script>
+  
+</div>
+<!-- Latest compiled and minified JavaScript -->
+<script src="/Publications/libs/bootstrap.min.js"></script>
 </body>
 </html>

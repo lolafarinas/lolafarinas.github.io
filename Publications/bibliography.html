@@ -1,62 +1,174 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-	  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"> 
-<html xmlns="http://www.w3.org/1999/xhtml"> 
-  <head>
-    <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
-    <meta http-equiv="cache-control" content="no-cache" /> 
-    <title>Publications</title>
-    
-    <!-- Cargar librerías necesarias -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
-    <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-    
-    <!-- Conectar el archivo .bib -->
-    <bibtex src="FarinasMD.bib"></bibtex>
-    
-    <script>
-      $(function () {
-        // Esperar a que se carguen los datos del archivo .bib
-        setTimeout(function () {
-          // Seleccionar y ordenar publicaciones
-          const publications = $(".bibtex_template ul li").get();
-          publications.sort(function (a, b) {
-            const yearA = parseInt($(a).find(".year").text().trim()) || 0;
-            const yearB = parseInt($(b).find(".year").text().trim()) || 0;
-            return yearB - yearA; // Orden cronológico inverso
-          });
-
-          // Renderizar publicaciones ordenadas
-          const container = $(".bibtex_template ul");
-          container.empty();
-          publications.forEach(pub => container.append(pub));
-        }, 500); // Asegurar carga tras medio segundo
-      });
-    </script>
-    
-    <style>
-      html, body {
-        font-family: "Times New Roman", Times, serif;
-        font-size: 17px;
-      }
-      bibtex { display: none; }
-      .bibtex_template li {
-        margin-bottom: 10px;
-      }
-      h1 {
-        margin-bottom: 20px;
-      }
-    </style>
-  </head>
-<body>
-  <h1 class="header">Publications</h1>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Bibliography of Manuela Veloso" name="author">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Manuela Veloso - Bibliography</title>
   
-  <!-- Contenedor de publicaciones -->
-  <div id="bibtex_display">
-    <div class="if bibtex_template">
-      <ul>
-        <!-- Las publicaciones serán generadas automáticamente -->
-      </ul>
+  <!-- Include Bootstrap CSS -->
+  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
+  
+  <!-- Custom Styles for Page -->
+  <style>
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 17px;
+    }
+    .navbar {
+      margin-bottom: 0;
+    }
+    .navbar-nav {
+      margin-left: 10px;
+    }
+    .navbar-default .navbar-nav > li > a {
+      color: #5a5a5a;
+    }
+    .navbar-default .navbar-nav > li > a:hover {
+      color: #337ab7;
+    }
+    .section-container {
+      padding: 50px 0;
+    }
+    .header {
+      font-size: 32px;
+      text-align: center;
+      padding-top: 20px;
+    }
+    .bibtex_structure {
+      margin-top: 40px;
+    }
+    .bibtex_var {
+      font-size: 16px;
+      line-height: 1.5;
+    }
+  </style>
+</head>
+<body>
+
+<!-- Header Section with Navigation -->
+<header>
+  <nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="#top">Home</a></li>
+          <li><a href="#about">About Me</a></li>
+          <li><a href="#research">Research</a></li>
+          <li><a href="#publications">Publications</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#outreach">Outreach</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
+
+<!-- Publications Section -->
+<section id="publications" class="section-container">
+  <div class="container">
+    <h1 class="header">Manuela Veloso's Publications</h1>
+    <p class="text-center">
+      <small>See more publications at <a href="http://www.jpmorgan.com/ai">JPMorgan AI Research</a></small>
+    </p>
+    
+    <!-- Bibtex Structure to Display Entries -->
+    <div id="bibtex_display" class="bibtex_structure">
+      <!-- Publications will be loaded here dynamically -->
     </div>
   </div>
+</section>
+
+<!-- Footer Section -->
+<footer class="footer-container text-center">
+  <div class="container">
+    <p>© Manuela Veloso | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
+  </div>
+</footer>
+
+<!-- Include Bootstrap and jQuery JS -->
+<script src="/Publications/libs/jquery.min.js"></script>
+<script src="/Publications/libs/bootstrap.min.js"></script>
+<script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
+
+<script>
+// Function to fetch and parse the .bib file
+function loadBibtexData() {
+  // Fetch the .bib file
+  fetch('publications.bib')
+    .then(response => response.text())
+    .then(data => {
+      // Parse the BibTeX data
+      const bibEntries = parseBibtex(data);
+      
+      // Sort entries by year in descending order (reverse chronological order)
+      bibEntries.sort((a, b) => b.year - a.year);
+      
+      // Display the sorted publications
+      displayPublications(bibEntries);
+    })
+    .catch(error => {
+      console.error('Error fetching or parsing .bib file:', error);
+    });
+}
+
+// Function to parse the .bib file content
+function parseBibtex(data) {
+  const entries = [];
+  const regex = /@(\w+)\s*{([^,]+),([\s\S]+?)}/g;
+  let match;
+  while ((match = regex.exec(data)) !== null) {
+    const type = match[1];  // e.g., article, book
+    const citationKey = match[2];  // e.g., Veloso2024
+    const fields = match[3].trim();
+    
+    const entry = { citationKey, type };
+    fields.split('\n').forEach(field => {
+      const [key, value] = field.split('=').map(s => s.trim().replace(/{|}/g, ''));
+      if (key && value) entry[key] = value;
+    });
+    
+    entries.push(entry);
+  }
+  return entries;
+}
+
+// Function to display the publications on the webpage
+function displayPublications(entries) {
+  const container = document.getElementById('bibtex_display');
+  entries.forEach(entry => {
+    const publication = document.createElement('div');
+    publication.classList.add('publication');
+    publication.innerHTML = `
+      <div>
+        <strong><a href="${entry.url || '#'}" target="_blank">${entry.title}</a></strong>, 
+        <span class="authors">${entry.author}</span><br>
+        <span class="journal">${entry.journal || entry.booktitle}</span>, 
+        <span class="year">${entry.year}</span><br>
+        <span class="pages">${entry.pages || ''}</span>
+      </div>
+    `;
+    container.appendChild(publication);
+  });
+}
+
+// Load the bibliography when the page is ready
+document.addEventListener("DOMContentLoaded", function() {
+  loadBibtexData();
+});
+</script>
+
 </body>
 </html>

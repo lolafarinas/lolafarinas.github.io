@@ -5,24 +5,31 @@
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
     <meta http-equiv="cache-control" content="no-cache" /> 
     <title> 
-      Lola Fariñas' Publications 
+      Manuela Veloso's Publications 
     </title>
     
-    <script src="/Publications/libs/jquery.min.js"></script>
+    <!-- Cargar jQuery y bibtex-js -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-    <bibtex src="test.bib"></bibtex>
+    <bibtex src="FarinasMD.bib"></bibtex>
     
     <script>
       $(function () {
-        // Ordenar las publicaciones por año en orden cronológico inverso
-        const publications = $(".bibtex_template li").get();
-        publications.sort(function (a, b) {
-          const yearA = parseInt($(a).find(".year").text().trim()) || 0;
-          const yearB = parseInt($(b).find(".year").text().trim()) || 0;
-          return yearB - yearA; // Ordenar de mayor a menor
-        });
-        // Agregar las publicaciones ordenadas al contenedor
-        $("#bibtex_display ul").append(publications);
+        // Esperar a que se carguen los datos de bibtex-js
+        setTimeout(function () {
+          // Seleccionar las publicaciones y ordenarlas
+          const publications = $(".bibtex_template ul li").get();
+          publications.sort(function (a, b) {
+            const yearA = parseInt($(a).find(".year").text().trim()) || 0;
+            const yearB = parseInt($(b).find(".year").text().trim()) || 0;
+            return yearB - yearA; // Orden cronológico inverso
+          });
+
+          // Vaciar el contenedor y agregar las publicaciones ordenadas
+          const container = $(".bibtex_template ul");
+          container.empty();
+          publications.forEach(pub => container.append(pub));
+        }, 500); // Tiempo de espera para asegurar la carga de datos
       });
     </script>
     
@@ -43,26 +50,11 @@
 <body>
   <h1 class="header">Manuela Veloso's Publications</h1>
   
+  <!-- Contenedor de publicaciones -->
   <div id="bibtex_display">
-    <!-- Simulación de datos -->
     <div class="if bibtex_template">
       <ul>
-        <li>
-          <span class="title">Sample Title 1</span>,
-          <span class="year">2024</span>.
-        </li>
-        <li>
-          <span class="title">Sample Title 2</span>,
-          <span class="year">2023</span>.
-        </li>
-        <li>
-          <span class="title">Sample Title 3</span>,
-          <span class="year">2022</span>.
-        </li>
-        <li>
-          <span class="title">Sample Title 4</span>,
-          <span class="year">2021</span>.
-        </li>
+        <!-- Las publicaciones serán cargadas aquí automáticamente por bibtex_js -->
       </ul>
     </div>
   </div>

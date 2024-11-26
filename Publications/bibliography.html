@@ -14,11 +14,14 @@
     
     <script>
       $(function () {
+        // Mostrar todas las publicaciones por defecto
+        $(".bibtex_template li").show();
+
         // Filtro por año
         $("#search-year").on("input", function () {
-          const year = $(this).val().trim();
+          const year = $(this).val().trim(); // Leer el año ingresado
           if (year) {
-            // Mostrar solo los elementos que coincidan con el año
+            // Mostrar solo las publicaciones que coinciden con el año
             $(".bibtex_template li").each(function () {
               const pubYear = $(this).find(".year").text().trim();
               if (pubYear.startsWith(year)) {
@@ -28,15 +31,15 @@
               }
             });
           } else {
-            // Mostrar todo si el campo está vacío
+            // Si el campo está vacío, mostrar todas las publicaciones
             $(".bibtex_template li").show();
           }
         });
         
-        // Resetear el campo de búsqueda
+        // Resetear el filtro
         $("#reset-button").on("click", function () {
-          $("#search-year").val("");
-          $(".bibtex_template li").show();
+          $("#search-year").val(""); // Limpiar el campo de entrada
+          $(".bibtex_template li").show(); // Mostrar todas las publicaciones
         });
       });
     </script>
@@ -61,6 +64,9 @@
         border: 1px solid lightgrey;
         cursor: pointer;
       }
+      .bibtex_template li {
+        margin-bottom: 10px;
+      }
     </style>
   </head>
 <body>
@@ -71,6 +77,7 @@
   </div>
   
   <div id="bibtex_display">
+    <!-- Simulación de datos -->
     <div class="if bibtex_template">
       <ul>
         <li>

@@ -4,20 +4,20 @@
   <head>
     <meta http-equiv="Content-type" content="text/html;charset=UTF-8" /> 
     <meta http-equiv="cache-control" content="no-cache" /> 
-    <title> 
-      Manuela Veloso's Publications 
-    </title>
+    <title>Publications</title>
     
-    <!-- Cargar jQuery y bibtex-js -->
+    <!-- Cargar librerías necesarias -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-    <bibtex src="LolaFarinas_biblio.bib"></bibtex>
+    
+    <!-- Conectar el archivo .bib -->
+    <bibtex src="FarinasMD.bib"></bibtex>
     
     <script>
       $(function () {
-        // Esperar a que se carguen los datos de bibtex-js
+        // Esperar a que se carguen los datos del archivo .bib
         setTimeout(function () {
-          // Seleccionar las publicaciones y ordenarlas
+          // Seleccionar y ordenar publicaciones
           const publications = $(".bibtex_template ul li").get();
           publications.sort(function (a, b) {
             const yearA = parseInt($(a).find(".year").text().trim()) || 0;
@@ -25,11 +25,11 @@
             return yearB - yearA; // Orden cronológico inverso
           });
 
-          // Vaciar el contenedor y agregar las publicaciones ordenadas
+          // Renderizar publicaciones ordenadas
           const container = $(".bibtex_template ul");
           container.empty();
           publications.forEach(pub => container.append(pub));
-        }, 500); // Tiempo de espera para asegurar la carga de datos
+        }, 500); // Asegurar carga tras medio segundo
       });
     </script>
     
@@ -48,13 +48,13 @@
     </style>
   </head>
 <body>
-  <h1 class="header">Lola Fariñas' Publications</h1>
+  <h1 class="header">Publications</h1>
   
   <!-- Contenedor de publicaciones -->
   <div id="bibtex_display">
     <div class="if bibtex_template">
       <ul>
-        <!-- Las publicaciones serán cargadas aquí automáticamente por bibtex_js -->
+        <!-- Las publicaciones serán generadas automáticamente -->
       </ul>
     </div>
   </div>

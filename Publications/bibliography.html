@@ -10,37 +10,19 @@
     
     <script src="/Publications/libs/jquery.min.js"></script>
     <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-    <bibtex src="test.bib"></bibtex>
+    <bibtex src="LolaFarinas_biblio.bib"></bibtex>
     
     <script>
       $(function () {
-        // Mostrar todas las publicaciones por defecto
-        $(".bibtex_template li").show();
-
-        // Filtro por año
-        $("#search-year").on("input", function () {
-          const year = $(this).val().trim(); // Leer el año ingresado
-          if (year) {
-            // Mostrar solo las publicaciones que coinciden con el año
-            $(".bibtex_template li").each(function () {
-              const pubYear = $(this).find(".year").text().trim();
-              if (pubYear.startsWith(year)) {
-                $(this).show();
-              } else {
-                $(this).hide();
-              }
-            });
-          } else {
-            // Si el campo está vacío, mostrar todas las publicaciones
-            $(".bibtex_template li").show();
-          }
+        // Ordenar las publicaciones por año en orden cronológico inverso
+        const publications = $(".bibtex_template li").get();
+        publications.sort(function (a, b) {
+          const yearA = parseInt($(a).find(".year").text().trim()) || 0;
+          const yearB = parseInt($(b).find(".year").text().trim()) || 0;
+          return yearB - yearA; // Ordenar de mayor a menor
         });
-        
-        // Resetear el filtro
-        $("#reset-button").on("click", function () {
-          $("#search-year").val(""); // Limpiar el campo de entrada
-          $(".bibtex_template li").show(); // Mostrar todas las publicaciones
-        });
+        // Agregar las publicaciones ordenadas al contenedor
+        $("#bibtex_display ul").append(publications);
       });
     </script>
     
@@ -50,31 +32,16 @@
         font-size: 17px;
       }
       bibtex { display: none; }
-      .search-container {
-        margin-bottom: 20px;
-      }
-      #search-year {
-        width: 200px;
-        padding: 5px;
-        margin-right: 10px;
-      }
-      #reset-button {
-        padding: 5px 10px;
-        background-color: #f8f9fa;
-        border: 1px solid lightgrey;
-        cursor: pointer;
-      }
       .bibtex_template li {
         margin-bottom: 10px;
+      }
+      h1 {
+        margin-bottom: 20px;
       }
     </style>
   </head>
 <body>
   <h1 class="header">Manuela Veloso's Publications</h1>
-  <div class="search-container">
-    <input type="number" id="search-year" placeholder="Enter year (e.g., 2023)" />
-    <button id="reset-button">Reset</button>
-  </div>
   
   <div id="bibtex_display">
     <!-- Simulación de datos -->
@@ -91,6 +58,10 @@
         <li>
           <span class="title">Sample Title 3</span>,
           <span class="year">2022</span>.
+        </li>
+        <li>
+          <span class="title">Sample Title 4</span>,
+          <span class="year">2021</span>.
         </li>
       </ul>
     </div>

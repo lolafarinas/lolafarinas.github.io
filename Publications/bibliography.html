@@ -1,174 +1,153 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags -->
   <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Bibliography of Manuela Veloso" name="author">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-  <title>Manuela Veloso - Bibliography</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Lola Fariñas, PhD</title>
   
-  <!-- Include Bootstrap CSS -->
-  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
-  
-  <!-- Custom Styles for Page -->
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/main.3f6952e4.css"> <!-- Main Mashup CSS -->
+  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css"> <!-- Bootstrap -->
+
+  <!-- JavaScript libraries -->
+  <script src="/Publications/libs/jquery.min.js"></script>
+  <script src="/Publications/libs/bootstrap.min.js"></script>
+  <script src="/Publications/bibtex_js.js"></script>
+  <bibtex src="/Publications/FarinasMD.bib"></bibtex>
+
   <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 17px;
-    }
-    .navbar {
-      margin-bottom: 0;
-    }
-    .navbar-nav {
-      margin-left: 10px;
-    }
-    .navbar-default .navbar-nav > li > a {
-      color: #5a5a5a;
-    }
-    .navbar-default .navbar-nav > li > a:hover {
-      color: #337ab7;
-    }
-    .section-container {
-      padding: 50px 0;
+    /* Ajustes para que coincidan con tu estilo */
+    .container-fluid, .bibtex_structure {
+      margin-top: 20px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
     }
     .header {
-      font-size: 32px;
       text-align: center;
-      padding-top: 20px;
+      font-size: 24px;
+      margin-bottom: 20px;
     }
-    .bibtex_structure {
-      margin-top: 40px;
+    .searchbar {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 15px 0;
     }
-    .bibtex_var {
-      font-size: 16px;
-      line-height: 1.5;
+    .searchbar input,
+    .searchbar select {
+      max-width: 250px;
+      min-width: 200px;
+    }
+    .bibtexVar a {
+      text-decoration: underline;
+      color: #007bff;
+    }
+    .bibtexVar a:hover {
+      color: #0056b3;
     }
   </style>
 </head>
 <body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <!-- Navigation bar -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/index.html">01 : Home</a></li>
+            <li><a href="/about.html">02 : About me</a></li>
+            <li><a href="/research.html">03 : Research</a></li>
+            <li class="active"><a href="/Publications/bibliography_simple.html">04 : Publications</a></li>
+            <li><a href="/experience.html">05 : Experience</a></li>
+            <li><a href="/outreach.html">06 : Outreach</a></li>
+            <li><a href="/contact.html">07 : Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
 
-<!-- Header Section with Navigation -->
-<header>
-  <nav class="navbar navbar-fixed-top navbar-default">
+  <!-- Main Section for Publications -->
+  <div class="section-container">
     <div class="container">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="#top">Home</a></li>
-          <li><a href="#about">About Me</a></li>
-          <li><a href="#research">Research</a></li>
-          <li><a href="#publications">Publications</a></li>
-          <li><a href="#experience">Experience</a></li>
-          <li><a href="#outreach">Outreach</a></li>
-          <li><a href="#contact">Contact</a></li>
-        </ul>
+      <h1 class="header">Publications</h1>
+      <div class="container-fluid">
+        <!-- Searchbar Section -->
+        <div class="searchbar">
+          <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
+          <select id="authorselectfirst" class="btn bibtex_search bibtex_author" search="author">
+            <option value="">Search First Author</option>
+          </select>
+          <select id="authorselect" class="btn bibtex_search bibtex_author" search="author">
+            <option value="">Search Author</option>
+          </select>
+          <select id="topicselect" class="btn bibtex_search" search="topic">
+            <option value="">Search Topic</option>
+            <!-- Add your topics here -->
+            <option value="Autonomy">Autonomy</option>
+            <option value="Symbiotic">Symbiotic Autonomy</option>
+            <option value="CoBot">CoBot</option>
+            <option value="Planning">Planning</option>
+          </select>
+          <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
+        </div>
+
+        <!-- Display Section -->
+        <div class="bibtex_structure">
+          <div class="group year" extra="ASC number">
+            <a href="#top"><em>(Top of the page)</em></a>
+            <div class="sort journal" extra="DESC string">
+              <div class="templates"></div>
+            </div>
+          </div>
+        </div>
+        <div id="bibtex_display">
+          <div class="if bibtex_template" style="display: none;">
+            <ul>
+              <li>
+                <span class="if journal !nolink">
+                  <a class="bibtexVar" href="http://www.example.com/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
+                    <span class="title"></span>,
+                  </a>
+                </span>
+                <div class="author"></div>
+                <div class="journal"></div>
+              </li>
+            </ul>
+          </div>
+        </div>
       </div>
     </div>
-  </nav>
-</header>
+  </div>
 
-<!-- Publications Section -->
-<section id="publications" class="section-container">
-  <div class="container">
-    <h1 class="header">Manuela Veloso's Publications</h1>
-    <p class="text-center">
-      <small>See more publications at <a href="http://www.jpmorgan.com/ai">JPMorgan AI Research</a></small>
-    </p>
-    
-    <!-- Bibtex Structure to Display Entries -->
-    <div id="bibtex_display" class="bibtex_structure">
-      <!-- Publications will be loaded here dynamically -->
+  <!-- Footer -->
+  <footer class="footer-container text-center">
+    <div class="container">
+      <p>© LOLA FARIÑAS | Created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- Footer Section -->
-<footer class="footer-container text-center">
-  <div class="container">
-    <p>© Manuela Veloso | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
-  </div>
-</footer>
-
-<!-- Include Bootstrap and jQuery JS -->
-<script src="/Publications/libs/jquery.min.js"></script>
-<script src="/Publications/libs/bootstrap.min.js"></script>
-<script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-
-<script>
-// Function to fetch and parse the .bib file
-function loadBibtexData() {
-  // Fetch the .bib file
-  fetch('LolaFarinas_biblio.bib')
-    .then(response => response.text())
-    .then(data => {
-      // Parse the BibTeX data
-      const bibEntries = parseBibtex(data);
-      
-      // Sort entries by year in descending order (reverse chronological order)
-      bibEntries.sort((a, b) => b.year - a.year);
-      
-      // Display the sorted publications
-      displayPublications(bibEntries);
-    })
-    .catch(error => {
-      console.error('Error fetching or parsing .bib file:', error);
+  <!-- Initialization Scripts -->
+  <script>
+    $(function() {
+      $("#Fontselector").on("change", function() {
+        var font = $("#Fontselector option:selected").text();
+        $('.title.fonters').css("font-family", font);
+      });
     });
-}
 
-// Function to parse the .bib file content
-function parseBibtex(data) {
-  const entries = [];
-  const regex = /@(\w+)\s*{([^,]+),([\s\S]+?)}/g;
-  let match;
-  while ((match = regex.exec(data)) !== null) {
-    const type = match[1];  // e.g., article, book
-    const citationKey = match[2];  // e.g., Veloso2024
-    const fields = match[3].trim();
-    
-    const entry = { citationKey, type };
-    fields.split('\n').forEach(field => {
-      const [key, value] = field.split('=').map(s => s.trim().replace(/{|}/g, ''));
-      if (key && value) entry[key] = value;
-    });
-    
-    entries.push(entry);
-  }
-  return entries;
-}
-
-// Function to display the publications on the webpage
-function displayPublications(entries) {
-  const container = document.getElementById('bibtex_display');
-  entries.forEach(entry => {
-    const publication = document.createElement('div');
-    publication.classList.add('publication');
-    publication.innerHTML = `
-      <div>
-        <strong><a href="${entry.url || '#'}" target="_blank">${entry.title}</a></strong>, 
-        <span class="authors">${entry.author}</span><br>
-        <span class="journal">${entry.journal || entry.booktitle}</span>, 
-        <span class="year">${entry.year}</span><br>
-        <span class="pages">${entry.pages || ''}</span>
-      </div>
-    `;
-    container.appendChild(publication);
-  });
-}
-
-// Load the bibliography when the page is ready
-document.addEventListener("DOMContentLoaded", function() {
-  loadBibtexData();
-});
-</script>
-
+    function reset() {
+      $("select").val("").trigger('change');
+      $("#searchbar").val("").trigger('change');
+    }
+  </script>
 </body>
 </html>

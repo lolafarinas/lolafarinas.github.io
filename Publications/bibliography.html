@@ -29,15 +29,14 @@
     }
     .searchbar {
       display: flex;
-      flex-wrap: wrap;
-      justify-content: space-between;
+      justify-content: center;
       gap: 10px;
       padding: 15px 0;
     }
-    .searchbar input,
-    .searchbar select {
-      max-width: 250px;
-      min-width: 200px;
+    .searchbar input {
+      max-width: 400px;
+      width: 100%;
+      font-size: 16px;
     }
     .bibtexVar a {
       text-decoration: underline;
@@ -82,22 +81,12 @@
       <div class="container-fluid">
         <!-- Searchbar Section -->
         <div class="searchbar">
+          <input 
+            type="text" 
+            class="form-control bibtex_search" 
+            id="searchbar" 
+            placeholder="Search keywords in any field">
           <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
-          <select id="authorselectfirst" class="btn bibtex_search bibtex_author" search="author">
-            <option value="">Search First Author</option>
-          </select>
-          <select id="authorselect" class="btn bibtex_search bibtex_author" search="author">
-            <option value="">Search Author</option>
-          </select>
-          <select id="topicselect" class="btn bibtex_search" search="topic">
-            <option value="">Search Topic</option>
-            <!-- Add your topics here -->
-            <option value="Autonomy">Autonomy</option>
-            <option value="Symbiotic">Symbiotic Autonomy</option>
-            <option value="CoBot">CoBot</option>
-            <option value="Planning">Planning</option>
-          </select>
-          <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
         </div>
 
         <!-- Display Section -->
@@ -145,7 +134,6 @@
     });
 
     function reset() {
-      $("select").val("").trigger('change');
       $("#searchbar").val("").trigger('change');
     }
   </script>

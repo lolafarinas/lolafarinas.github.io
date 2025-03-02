@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Meta tags -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publications | Lola Fariñas, PhD</title>
+  
+  <!-- Stylesheets -->
+  <link rel="stylesheet" href="/assets/main.3f6952e4.css"> <!-- Main Mashup CSS -->
+  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css"> <!-- Bootstrap -->
+
+  <!-- JavaScript libraries -->
+  <script src="/Publications/libs/jquery.min.js"></script>
+  <script src="/Publications/libs/bootstrap.min.js"></script>
+
+  <style>
+    /* Ajustes de estilo según Mashup Template */
+    .container-fluid, .bibtex_structure {
+      margin-top: 20px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+    }
+    .header {
+      text-align: center;
+      font-size: 24px;
+      margin-bottom: 20px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-weight: 600;
+    }
+    .searchbar {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      padding: 15px 0;
+    }
+    .searchbar input {
+      max-width: 400px;
+      width: 100%;
+      font-size: 16px;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+    .bibtexVar a {
+      text-decoration: underline;
+      color: #007bff;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+      font-size: 16px;
+    }
+    .bibtexVar a:hover {
+      color: #0056b3;
+    }
+    .authors, .journal-info {
+      margin-top: 5px;
+      font-size: 14px;
+      color: #555;
+      font-family: "Helvetica Neue", Arial, sans-serif;
+    }
+  </style>
+</head>
+<body>
+  <!-- Header -->
+  <header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+      <div class="container">
+        <!-- Navigation bar -->
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+          <span class="sr-only">Toggle navigation</span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a href="/index.html">01 : Home</a></li>
+            <li><a href="/about.html">02 : About me</a></li>
+            <li><a href="/research.html">03 : Research</a></li>
+            <li class="active"><a href="/Publications/bibliography_simple.html">04 : Publications</a></li>
+            <li><a href="/experience.html">05 : Experience</a></li>
+            <li><a href="/outreach.html">06 : Outreach</a></li>
+            <li><a href="/contact.html">07 : Contact</a></li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Main Section for Publications -->
+  <div class="section-container">
+    <div class="container">
+      <h1 class="header">Publications</h1>
+      <div class="container-fluid">
+        <!-- Searchbar Section -->
+        <div class="searchbar">
+          <input 
+            type="text" 
+            class="form-control bibtex_search" 
+            id="searchbar" 
+            placeholder="Search keywords in any field">
+          <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
+        </div>
+
+        <!-- Display Section -->
+        <div class="bibtex_structure" id="publications-list">
+          <!-- Publications will be loaded here -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer class="footer-container text-center">
+    <div class="container">
+      <p>© LOLA FARIÑAS | Created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
+    </div>
+  </footer>
+
+  <!-- Initialization Scripts -->
+  <script>
+    $(document).ready(function() {
+      $.getJSON('/Publications/publications.json', function(data) {
+        var publicationsList = $('#publications-list');
+        data.forEach(function(publication) {
+          var publicationItem = `
+            <div class="publication-item">
+              <a href="${publication.link}" class="bibtexVar">
+                <span class="title">${publication.title}</span>
+              </a>
+              <div class="authors">${publication.authors}</div>
+              <div class="journal-info">${publication.journal}</div>
+            </div>
+          `;
+          publicationsList.append(publicationItem);
+        });
+      });
+    });
+
+    function reset() {
+      $("#searchbar").val("").trigger('change');
+    }
+  </script>
+</body>
+</html>

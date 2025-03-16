@@ -115,6 +115,20 @@
         .then(response => response.text())
         .then(bibtexData => {
           // Process BibTeX data here
+          var bibtexDisplay = $('#bibtex_display');
+          var entries = bibtexParse.toJSON(bibtexData);
+          entries.forEach(entry => {
+            var html = `
+              <div class="publication-item">
+                <a href="${entry.entryTags.url}" class="bibtexVar">
+                  <span class="title">${entry.entryTags.title}</span>
+                </a>
+                <div class="authors">${entry.entryTags.author}</div>
+                <div class="journal-info">${entry.entryTags.journal}, ${entry.entryTags.year}</div>
+              </div>
+            `;
+            bibtexDisplay.append(html);
+          });
         })
         .catch(error => console.error('Error loading .bib file:', error));
     });

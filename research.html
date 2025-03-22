@@ -4,43 +4,25 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Lola Fariñas, PhD. Researcher in Physics and Information Technologies. Explore my research projects, publications, and outreach activities.">
+  <meta name="description" content="Lola Fariñas, PhD. Research projects overview">
   <meta name="author" content="Lola Fariñas">
-  <meta name="robots" content="index, follow">
-  <title>Research Projects | Lola Fariñas, PhD</title>
+  <title>Research Projects - Lola Fariñas, PhD</title>
   
-  <!-- Favicon -->
   <link rel="icon" href="./assets/favicon.ico" type="image/x-icon">
-  
-  <!-- Stylesheets -->
   <link href="./main.3f6952e4.css" rel="stylesheet">
-  
-  <!-- Custom Styles -->
-  <style>
-    .section-container {
-      padding-top: 100px; /* Prevents overlap with the fixed navbar */
-    }
-    .project-card {
-      margin-bottom: 30px;
-      border-radius: 10px;
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-      padding: 20px;
-      background-color: #fff;
-    }
-    .project-card img {
-      max-width: 100%;
-      border-radius: 10px;
-    }
-  </style>
 </head>
 
 <body>
-  <!-- Navigation Bar -->
+  <div id="site-border-left"></div>
+  <div id="site-border-right"></div>
+  <div id="site-border-top"></div>
+  <div id="site-border-bottom"></div>
+
+  <!-- Unified Navigation Menu -->
   <header>
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
+        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
@@ -52,8 +34,8 @@
             <li><a href="/research.html">Research</a></li>
             <li><a href="/projects.html">Projects</a></li>
             <li><a href="/publications.html">Publications</a></li>
-            <li><a href="/experience.html">Experience</a></li>
             <li><a href="/outreach.html">Outreach</a></li>
+            <li><a href="/experience.html">Experience</a></li>
             <li><a href="/contact.html">Contact</a></li>
           </ul>
         </div>
@@ -62,59 +44,64 @@
   </header>
 
   <!-- Research Projects Section -->
-  <div class="section-container">
-    <div class="container">
-      <div class="row text-center">
-        <h1 class="h2">Research Projects</h1>
-        <p>Explore my research projects, both ongoing and completed.</p>
-      </div>
+  <main>
+    <div class="section-container">
+      <div class="container">
+        <div class="row">
+          <div class="col-xs-12 text-center">
+            <h1 class="h2">Research Projects</h1>
+            <p>Explore my ongoing and completed research projects.</p>
+          </div>
+        </div>
 
-      <div class="row">
-        <!-- Project 1 -->
-        <div class="col-md-4">
-          <div class="project-card">
-            <img src="./assets/images/CitRUS_1.jpg" alt="CitRUS Project">
-            <h3>CitRUS</h3>
-            <p>Non-Contact Resonant Ultrasound Spectroscopy for water stress detection in citrus crops.</p>
-            <a href="/projects/2020_CITRUS.html" class="btn btn-default">Learn more</a>
+        <div class="row">
+          <!-- Project Card 1 -->
+          <div class="col-md-4">
+            <div class="card">
+              <img src="./assets/images/CitRUS_1.jpg" class="img-responsive" alt="CitRUS Project">
+              <div class="card-body">
+                <h3>CitRUS</h3>
+                <p>Non-Contact Resonant Ultrasound Spectroscopy for citrus crops.</p>
+                <a href="/projects/2020_CITRUS.html" class="btn btn-default">Learn more</a>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <!-- Project 2 -->
-        <div class="col-md-4">
-          <div class="project-card">
-            <img src="./assets/images/ultratex.jpg" alt="ULTRATEX Project">
-            <h3>ULTRATEX</h3>
-            <p>Innovative ultrasonic textiles for medical applications.</p>
-            <a href="/projects/2019_ULTRATEX.html" class="btn btn-default">Learn more</a>
+
+          <!-- Project Card 2 -->
+          <div class="col-md-4">
+            <div class="card">
+              <img src="./assets/images/ultratex.jpg" class="img-responsive" alt="ULTRATEX Project">
+              <div class="card-body">
+                <h3>ULTRATEX</h3>
+                <p>Ultrasonic textiles for medical applications.</p>
+                <a href="/projects/2019_ULTRATEX.html" class="btn btn-default">Learn more</a>
+              </div>
+            </div>
           </div>
-        </div>
-        
-        <!-- Project 3 -->
-        <div class="col-md-4">
-          <div class="project-card">
-            <img src="./assets/images/fat.jpg" alt="FAT Project">
-            <h3>FAT</h3>
-            <p>Investigating adaptive fabric functionality in extreme environments.</p>
-            <a href="/projects/2019_FAT.html" class="btn btn-default">Learn more</a>
+
+          <!-- Project Card 3 -->
+          <div class="col-md-4">
+            <div class="card">
+              <img src="./assets/images/fat.jpg" class="img-responsive" alt="FAT Project">
+              <div class="card-body">
+                <h3>FAT</h3>
+                <p>Adaptive fabric functionality in extreme environments.</p>
+                <a href="/projects/2019_FAT.html" class="btn btn-default">Learn more</a>
+              </div>
+            </div>
           </div>
         </div>
       </div>
     </div>
-  </div>
+  </main>
 
   <!-- Footer -->
   <footer class="footer-container text-center">
     <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <p>© Lola Fariñas, PhD | Website created with <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a></p>
-        </div>
-      </div>
+      <p>© Lola Fariñas, PhD. | Created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
     </div>
   </footer>
 
-  <!-- Scripts -->
   <script type="text/javascript" src="./main.70a66962.js"></script>
 </body>
 </html>

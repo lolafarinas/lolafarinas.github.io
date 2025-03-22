@@ -1,68 +1,164 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <!-- Meta tags for character set, viewport, and other properties -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Lola Fariñas, PhD - About Me</title>
-  <link rel="stylesheet" href="./main.3f6952e4.css">
-  <link rel="icon" href="./assets/favicon.ico">
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate">
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+
+  <!-- Prevent tap highlight on Internet Explorer -->
+  <meta name="msapplication-tap-highlight" content="no">
+  
+  <!-- Favicon and title for the webpage -->
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Lola Fariñas, PhD.</title>  
+
+  <!-- Include the main stylesheet for the webpage -->
+  <link href="./main.3f6952e4.css" rel="stylesheet">
+
+  <!-- Custom CSS to prevent menu overlap -->
+  <style>
+    .section-container {
+      padding-top: 100px; /* Adjust this value based on navbar height */
+    }
+
+    /* Improves readability */
+    .about-text {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Image styling */
+    .about-image {
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
+
 <body>
-  <header>
-    <nav class="navbar navbar-fixed-top navbar-default">
-      <div class="container">
-        <div class="navbar-header">
-          <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse">
-            <span class="sr-only">Toggle navigation</span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-            <span class="icon-bar"></span>
-          </button>
-        </div>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/index.html">Home</a></li>
-            <li class="active"><a href="/about.html">About Me</a></li>
-            <li><a href="/research.html">Research</a></li>
-            <li><a href="/Publications/bibliography_simple.html">Publications</a></li>
-            <li><a href="/experience.html">Experience</a></li>
-            <li><a href="/outreach.html">Outreach</a></li>
-            <li><a href="/contact.html">Contact</a></li>
-          </ul>
-        </div>
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+
+<!-- Header section with navigation menu -->
+<header>
+  <nav class="navbar navbar-fixed-top navbar-default">
+    <div class="container">
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+
+      <!-- Navigation menu -->
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/index.html" title="">01 : Home</a></li>
+          <li><a href="/about.html" title="">02 : About me</a></li>
+          <li><a href="/research.html" title="">03 : Research</a></li>
+          <li><a href="Publications/bibliography_simple.html" title="">04 : Publications</a></li>
+
+          <!-- Submenu for "Experience" -->
+          <li class="dropdown-submenu">
+            <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="nav-label">05 : Experience</span><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/experience.html#Ordered">05.1 Education</a></li>
+              <li><a href="/experience.html#Number">05.2 Career</a></li>
+              <li><a href="/experience.html#Icons">05.3 Awards</a></li>
+            </ul>
+          </li>
+
+          <!-- Submenu for "Outreach" -->
+          <li class="dropdown-submenu">
+            <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+              <span class="nav-label">06 : Outreach</span><span class="caret"></span>
+            </a>
+            <ul class="dropdown-menu">
+              <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
+              <li><a href="/outreach.html#Media">06.2 Media</a></li>
+              <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
+            </ul>
+          </li>
+
+          <li><a href="/contact.html" title="">07 : Contact</a></li>
+          <li><a href="/components.html" title="">08 : Components</a></li>
+        </ul>
       </div>
-    </nav>
-  </header>
-
-  <section class="about-me">
-    <div class="container text-center">
-      <h1>About Me</h1>
-      <p class="lead">Passionate about uncovering hidden relationships in science and technology.</p>
     </div>
-  </section>
+  </nav>
+</header>
 
-  <div class="container about-content">
+<!-- About Me section -->
+<div class="section-container">
+  <div class="container">
     <div class="row">
-      <div class="col-md-6">
-        <h3>Scientific Curiosity & Research</h3>
-        <p>I am a researcher dedicated to exploring the intricate connections between seemingly unrelated phenomena. My work spans various domains of physics and information technology, pushing the boundaries of scientific knowledge.</p>
-        <p>With a strong background in experimental and theoretical research, I aim to contribute to advancements in technology and fundamental understanding.</p>
-        <a href="/research.html" class="btn btn-primary">Explore My Research</a>
-      </div>
-      <div class="col-md-6 text-center">
-        <img src="./assets/images/Lola-Nobel.png" class="img-responsive img-circle" alt="Lola Fariñas">
-      </div>
-    </div>
-    <div class="text-center">
-      <a href="https://www.linkedin.com/in/yourprofile" class="btn btn-outline-secondary">Connect on LinkedIn</a>
-      <a href="mailto:your.email@example.com" class="btn btn-outline-primary">Contact Me</a>
+      <div class="col-xs-12">
+        <div class="section-container-spacer text-center">
+          <h1 class="h2">01 : About me</h1>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <!-- About Me content -->
+                <h3> Exploring connections between seemingly unrelated concepts</h3>
+                <p class="about-text">
+                  As a scientist, I am passionate about uncovering the hidden relationships between phenomena that appear disconnected at first glance. 
+                  My work combines deep curiosity with rigorous methodology, bridging the gap between theoretical insights and practical applications.
+                </p>
+                <p class="about-text">
+                  With a background in physics and information technologies, I focus on interdisciplinary research that pushes the boundaries of knowledge. 
+                  Collaboration, innovation, and outreach are key pillars of my scientific journey.
+                </p>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <!-- About Me image -->
+                <img src="./assets/images/Lola-Nobel.png" class="img-responsive about-image" alt="Lola Fariñas, PhD">
+              </div>
+            </div>
+          </div>
+        </div>
+     </div>
     </div>
   </div>
+</div>
 
-  <footer class="footer-container text-center">
-    <p>&copy; 2024 Lola Fariñas | Website developed with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
-  </footer>
+<!-- Footer section -->
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/" title="Create website with free HTML template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
+      </div>
+    </div>
+  </div>
+</footer>
 
-  <script src="./main.70a66962.js"></script>
-</body>
-</html>
+<!-- JavaScript for page initialization -->
+<script>
+  document.addEventListener("DOMContentLoaded", function (event) {
+    navActivePage();
+  });
+</script>
+
+<!-- Google Analytics (You need to replace UA-XXXXX-X with your own site's ID) -->
+<!--
+<script>
+  (function (i, s, o, g, r, a, m) {
+    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
+      (i[r].q = i[r].q || []).push(arguments)
+    }, i[r].l = 1 * new Date(); a = s.createElement(o),
+      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
+  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
+  ga('create', 'UA-XXXXX-X', 'auto');
+  ga

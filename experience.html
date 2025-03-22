@@ -22,136 +22,147 @@
     body {
       font-family: Arial, sans-serif;
     }
-    h1 {
-      font-size: 28px;
-      color: #2C3E50;
-      border-bottom: 3px solid #2C3E50;
-      padding-bottom: 10px;
+    .template-title-example {
+      font-size: 2rem;
+      font-weight: bold;
       margin-top: 40px;
+      color: #2c3e50;
+      text-align: center;
     }
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin: 20px 0;
+      background: #f8f9fa;
     }
     th, td {
-      padding: 10px;
+      padding: 12px;
       border: 1px solid #ddd;
       text-align: left;
     }
     th {
-      background-color: #34495E;
+      background-color: #34495e;
       color: white;
+      font-size: 1.2rem;
     }
     tr:nth-child(even) {
-      background-color: #f2f2f2;
-    }
-    tr:hover {
-      background-color: #ddd;
+      background-color: #ecf0f1;
     }
   </style>
 </head>
 
 <body>
-  <header>
-    <nav class="navbar navbar-fixed-top navbar-default">
-      <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/index.html">01 : Home</a></li>
-            <li><a href="/about.html">02 : About me</a></li>
-            <li><a href="/research.html">03 : Research</a></li>
-            <li><a href="/Publications/bibliography.html">04 : Publications</a></li>
-            <li><a href="/experience.html">05 : Experience</a></li>
-            <li><a href="/outreach.html">06 : Outreach</a></li>
-            <li><a href="/contact.html">07 : Contact</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
-  </header>
-
-  <div class="section-container">
+<header>
+  <nav class="navbar navbar-fixed-top navbar-default">
     <div class="container">
-      <h1>Education</h1>
-      <table>
-        <tr>
-          <th>Date</th>
-          <th>Degree</th>
-          <th>Institution</th>
-        </tr>
-        <tr>
-          <td>07.2016</td>
-          <td>Doctoral dissertation</td>
-          <td>Technical University of Madrid (UPM)</td>
-        </tr>
-        <tr>
-          <td>07.2011</td>
-          <td>Master of Science in Biomedical Engineering</td>
-          <td>Technical University of Madrid (UPM)</td>
-        </tr>
-        <tr>
-          <td>10.2009</td>
-          <td>Telecommunication Engineering</td>
-          <td>University of Alcalá (UAH)</td>
-        </tr>
-      </table>
+      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+        <span class="sr-only">Toggle navigation</span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+        <span class="icon-bar"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbar-collapse">
+        <ul class="nav navbar-nav">
+          <li><a href="/index.html">01 : Home</a></li>
+          <li><a href="/about.html">02 : About me</a></li>
+          <li><a href="/research.html">03 : Research</a></li>
+          <li><a href="/Publications/bibliography.html">04 : Publications</a></li>
+          <li class="dropdown-submenu">
+            <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown">05 : Experience <span class="caret"></span></a>
+            <ul class="dropdown-menu">
+              <li><a href="/experience.html#Education">05.1 Education</a></li>
+              <li><a href="/experience.html#Professional experience">05.2 Career</a></li>
+              <li><a href="/experience.html#Awards">05.3 Awards</a></li>
+            </ul>
+          </li>
+          <li><a href="/outreach.html">06 : Outreach</a></li>
+          <li><a href="/contact.html">07 : Contact</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+</header>
 
-      <h1>Professional Experience</h1>
-      <table>
-        <tr>
-          <th>Institution</th>
-          <th>Location</th>
-          <th>Dates</th>
-        </tr>
-        <tr>
-          <td><b>SPANISH NATIONAL RESEARCH COUNCIL (CSIC)</b>, Ultrasonic and Sensors Technologies Dept.</td>
-          <td>Spain</td>
-          <td>01.2022 - Present</td>
-        </tr>
-        <tr>
-          <td><b>IberCal (TECNATOM group)</b>, NDT Technical Engineer</td>
-          <td>Spain</td>
-          <td>06-12.2020</td>
-        </tr>
-        <tr>
-          <td><b>UNIVERSITY OF CALIFORNIA</b>, Dep. Food Science & Tech.</td>
-          <td>USA</td>
-          <td>02-08.2020</td>
-        </tr>
-        <tr>
-          <td><b>UNIVERSITAT POLITÈCNICA DE VALÈNCIA (UPV)</b>, Dep. Food Technology</td>
-          <td>Spain</td>
-          <td>07.2020 - 07.2018</td>
-        </tr>
-      </table>
+<div class="container">
+  <h1 class="template-title-example">Education</h1>
+  <table>
+    <tr>
+      <th>Year</th>
+      <th>Degree</th>
+      <th>Institution</th>
+    </tr>
+    <tr>
+      <td>2016</td>
+      <td>Doctoral Dissertation</td>
+      <td>Technical University of Madrid (UPM)</td>
+    </tr>
+    <tr>
+      <td>2011</td>
+      <td>Master of Science in Biomedical Engineering</td>
+      <td>Technical University of Madrid (UPM)</td>
+    </tr>
+    <tr>
+      <td>2009</td>
+      <td>Telecommunication Engineering</td>
+      <td>University of Alcalá (UAH)</td>
+    </tr>
+  </table>
 
-      <h1>Awards</h1>
-      <p>Coming soon...</p>
+  <h1 class="template-title-example">Professional Experience</h1>
+  <table>
+    <tr>
+      <th>Institution</th>
+      <th>Position</th>
+      <th>Country</th>
+      <th>Year</th>
+    </tr>
+    <tr>
+      <td>CSIC, ITEFI</td>
+      <td>Juan de la Cierva Researcher</td>
+      <td>Spain</td>
+      <td>2022 - Present</td>
+    </tr>
+    <tr>
+      <td>University of California</td>
+      <td>Visiting Scholar</td>
+      <td>USA</td>
+      <td>2020</td>
+    </tr>
+    <tr>
+      <td>Harvard University</td>
+      <td>Researcher</td>
+      <td>USA</td>
+      <td>2016</td>
+    </tr>
+    <tr>
+      <td>MIT</td>
+      <td>Research Assistant</td>
+      <td>USA</td>
+      <td>2014</td>
+    </tr>
+  </table>
+
+  <h1 class="template-title-example">Awards</h1>
+  <p style="text-align: center; font-size: 1.2rem;">List of awards and recognitions will be added soon.</p>
+</div>
+
+<footer class="footer-container text-center">
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
+      </div>
     </div>
   </div>
+</footer>
 
-  <footer class="footer-container text-center">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a>/<a href="https://www.unsplash.com/">Unsplash</a></p>
-        </div>
-      </div>
-    </div>
-  </footer>
+<script>
+  document.addEventListener("DOMContentLoaded", function () {
+     navActivePage();
+  });
+</script>
 
-  <script>
-    document.addEventListener("DOMContentLoaded", function () {
-      navActivePage();
-    });
-  </script>
-  <script type="text/javascript" src="./main.70a66962.js"></script>
+<script type="text/javascript" src="./main.70a66962.js"></script>
 </body>
+
 </html>

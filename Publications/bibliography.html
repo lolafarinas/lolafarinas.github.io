@@ -1,70 +1,69 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta tags -->
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Publications | Lola Fariñas, PhD</title>
-  
-  <!-- Stylesheets -->
-  <link rel="stylesheet" href="/assets/main.3f6952e4.css"> <!-- Main Mashup CSS -->
-  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css"> <!-- Bootstrap -->
-
-  <!-- JavaScript libraries -->
+  <meta content="IE=edge" http-equiv="X-UA-Compatible">
+  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="description" name="description">
+  <meta name="google" content="notranslate" />
+  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+  <meta name="msapplication-tap-highlight" content="no">
+  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+  <link href="./assets/favicon.ico" rel="icon">
+  <title>Publications | Lola Fariñas, PhD</title>  
+  <link href="https://lolafarinas.github.io/main.3f6952e4.css" rel="stylesheet">
+  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
   <script src="/Publications/libs/jquery.min.js"></script>
-  <script src="/Publications/libs/bootstrap.min.js"></script>
-  <script src="/Publications/bibtex_js.js"></script>
-  <bibtex src="/Publications/LolaFarinas_biblio.bib"></bibtex>
-
+  <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
   <style>
-    /* Ajustes de estilo según Mashup Template */
-    .container-fluid, .bibtex_structure {
-      margin-top: 20px;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-    }
-    .header {
-      text-align: center;
-      font-size: 24px;
-      margin-bottom: 20px;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-weight: 600;
+    body {
+      font-family: "Times New Roman", Times, serif;
+      font-size: 17px;
+      line-height: 1.6;
     }
     .searchbar {
-      display: flex;
-      justify-content: center;
-      gap: 10px;
-      padding: 15px 0;
+      margin-bottom: 20px;
     }
-    .searchbar input {
-      max-width: 400px;
-      width: 100%;
+    .header {
+      font-weight: bold;
+      font-size: 24px;
+    }
+    .btn {
+      margin-right: 10px;
+    }
+    #bibtex_display {
+      margin-top: 20px;
+    }
+    .publication-item {
+      margin-bottom: 20px;
+    }
+    .publication-item .title {
+      font-weight: bold;
+      font-size: 18px;
+    }
+    .publication-item .authors, .publication-item .journal-info {
       font-size: 16px;
-      font-family: "Helvetica Neue", Arial, sans-serif;
     }
-    .bibtexVar a {
-      text-decoration: underline;
-      color: #007bff;
-      font-family: "Helvetica Neue", Arial, sans-serif;
-      font-size: 16px;
-    }
-    .bibtexVar a:hover {
-      color: #0056b3;
-    }
-    .authors, .journal-info {
-      margin-top: 5px;
-      font-size: 14px;
-      color: #555;
-      font-family: "Helvetica Neue", Arial, sans-serif;
+    footer {
+      margin-top: 40px;
+      padding: 20px 0;
+      background-color: #f8f8f8;
+      border-top: 1px solid #e7e7e7;
     }
   </style>
 </head>
+
 <body>
-  <!-- Header -->
+  <!-- Site Borders -->
+  <div id="site-border-left"></div>
+  <div id="site-border-right"></div>
+  <div id="site-border-top"></div>
+  <div id="site-border-bottom"></div>
+
+  <!-- Header Section -->
   <header>
     <nav class="navbar navbar-fixed-top navbar-default">
       <div class="container">
-        <!-- Navigation bar -->
         <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
           <span class="sr-only">Toggle navigation</span>
           <span class="icon-bar"></span>
@@ -76,7 +75,7 @@
             <li><a href="/index.html">01 : Home</a></li>
             <li><a href="/about.html">02 : About me</a></li>
             <li><a href="/research.html">03 : Research</a></li>
-            <li class="active"><a href="/Publications/bibliography_simple.html">04 : Publications</a></li>
+            <li class="active"><a href="/Publications/bibliography.html">04 : Publications</a></li>
             <li><a href="/experience.html">05 : Experience</a></li>
             <li><a href="/outreach.html">06 : Outreach</a></li>
             <li><a href="/contact.html">07 : Contact</a></li>
@@ -86,75 +85,69 @@
     </nav>
   </header>
 
-  <!-- Main Section for Publications -->
+  <!-- Publications Section -->
   <div class="section-container">
     <div class="container">
-      <h1 class="header">Publications</h1>
-      <div class="container-fluid">
-        <!-- Searchbar Section -->
-        <div class="searchbar">
-          <input 
-            type="text" 
-            class="form-control bibtex_search" 
-            id="searchbar" 
-            placeholder="Search keywords in any field">
-          <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
-        </div>
+      <h2 class="header text-center">Lola Fariñas' Publications</h2>
+      <p class="text-center">
+        Explore my published works. For a complete list, visit my 
+        <a href="https://scholar.google.com/citations?hl=es&user=RVHxAjEAAAAJ" target="_blank">Google Scholar</a> profile.
+      </p>
+      
+      <div class="searchbar">
+        <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
+        <select id="authorselectfirst" class="btn bibtex_search bibtex_author" search="author">
+          <option value="">Search by First Author</option>
+        </select>
+        <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
+      </div>
 
-        <!-- Display Section -->
-        <div class="bibtex_structure">
-          <div class="group year" extra="ASC number">
-            <a href="#top"><em>(Top of the page)</em></a>
-            <div class="sort journal" extra="DESC string">
-              <div class="templates"></div>
-            </div>
-          </div>
-        </div>
-        <div id="bibtex_display">
-          <div class="if bibtex_template" style="display: none;">
-            <ul>
-              <li>
-                <!-- Título con enlace -->
-                <span class="if journal !nolink">
-                  <a class="bibtexVar" href="http://www.example.com/+BIBTEXKEY+.pdf" extra="BIBTEXKEY">
-                    <span class="title"></span>
-                  </a>
-                </span>
-                <!-- Autores -->
-                <div class="authors">
-                  <span class="author"></span>
-                </div>
-                <!-- Revista -->
-                <div class="journal-info">
-                  <span class="journal"></span>
-                </div>
-              </li>
-            </ul>
-          </div>
-        </div>
+      <div id="bibtex_display">
+        <!-- Dynamic BibTeX content will be inserted here -->
       </div>
     </div>
   </div>
 
-  <!-- Footer -->
+  <!-- Footer Section -->
   <footer class="footer-container text-center">
     <div class="container">
-      <p>© LOLA FARIÑAS | Created with <a href="http://www.mashup-template.com/">Mashup Template</a></p>
+      <p>© Lola Fariñas | Website created with 
+        <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a> / 
+        <a href="https://www.unsplash.com/" target="_blank">Unsplash</a>
+      </p>
     </div>
   </footer>
 
-  <!-- Initialization Scripts -->
+  <!-- JavaScript -->
   <script>
-    $(function() {
-      $("#Fontselector").on("change", function() {
-        var font = $("#Fontselector option:selected").text();
-        $('.title.fonters').css("font-family", font);
-      });
+    $(document).ready(function () {
+      fetch('./LolaFarinas_biblio.bib')
+        .then(response => response.text())
+        .then(bibtexData => {
+          // Process BibTeX data here
+          var bibtexDisplay = $('#bibtex_display');
+          var entries = bibtexParse.toJSON(bibtexData);
+          entries.forEach(entry => {
+            var html = `
+              <div class="publication-item">
+                <a href="${entry.entryTags.url}" class="bibtexVar">
+                  <span class="title">${entry.entryTags.title}</span>
+                </a>
+                <div class="authors">${entry.entryTags.author}</div>
+                <div class="journal-info">${entry.entryTags.journal}, ${entry.entryTags.year}</div>
+              </div>
+            `;
+            bibtexDisplay.append(html);
+          });
+        })
+        .catch(error => console.error('Error loading .bib file:', error));
     });
 
     function reset() {
-      $("#searchbar").val("").trigger('change');
+      $('#searchbar').val('');
+      $('#authorselectfirst').val('');
     }
   </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

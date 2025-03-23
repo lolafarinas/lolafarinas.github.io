@@ -103,9 +103,6 @@
       
       <div class="searchbar">
         <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
-        <select id="authorselectfirst" class="btn bibtex_search bibtex_author" search="author">
-          <option value="">Search by First Author</option>
-        </select>
         <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
       </div>
 
@@ -134,6 +131,10 @@
           // Process BibTeX data here
           var bibtexDisplay = $('#bibtex_display');
           var entries = bibtexParse.toJSON(bibtexData);
+
+          // Sort entries by year in descending order
+          entries.sort((a, b) => b.entryTags.year - a.entryTags.year);
+
           entries.forEach(entry => {
             var html = `
               <div class="publication-item">
@@ -146,13 +147,22 @@
             `;
             bibtexDisplay.append(html);
           });
+
+          // Search functionality
+          $('#searchbar').on('input', function() {
+            var searchTerm = $(this).val().toLowerCase();
+            $('.publication-item').each(function() {
+              var text = $(this).text().toLowerCase();
+              $(this).toggle(text.includes(searchTerm));
+            });
+          });
         })
         .catch(error => console.error('Error loading .bib file:', error));
     });
 
     function reset() {
       $('#searchbar').val('');
-      $('#authorselectfirst').val('');
+      $('.publication-item').show();
     }
   </script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>

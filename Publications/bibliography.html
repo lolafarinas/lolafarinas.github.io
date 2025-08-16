@@ -1,170 +1,44 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
-  <meta content="Mashup templates have been developed by Orson.io team" name="author">
-  <meta name="msapplication-tap-highlight" content="no">
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-  <title>Publications | Lola Fariñas, PhD</title>  
-  <link href="https://lolafarinas.github.io/main.3f6952e4.css" rel="stylesheet">
-  <link rel="stylesheet" href="/Publications/libs/bootstrap.min.css">
-  <script src="/Publications/libs/jquery.min.js"></script>
-  <script src="bibtex_js.js" type="text/javascript" charset="utf-8"></script>
-  <style>
-    body {
-      font-family: "Times New Roman", Times, serif;
-      font-size: 17px;
-      line-height: 1.6;
-    }
-    .searchbar {
-      margin-bottom: 20px;
-    }
-    .header {
-      font-weight: bold;
-      font-size: 24px;
-    }
-    .btn {
-      margin-right: 10px;
-    }
-    #bibtex_display {
-      margin-top: 20px;
-    }
-    .publication-item {
-      margin-bottom: 20px;
-    }
-    .publication-item .title {
-      font-weight: bold;
-      font-size: 18px;
-    }
-    .publication-item .authors, .publication-item .journal-info {
-      font-size: 16px;
-    }
-    footer {
-      margin-top: 40px;
-      padding: 20px 0;
-      background-color: #f8f8f8;
-      border-top: 1px solid #e7e7e7;
-    }
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Publications - Lola Fariñas</title>
+    <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
-  <!-- Site Borders -->
-  <div id="site-border-left"></div>
-  <div id="site-border-right"></div>
-  <div id="site-border-top"></div>
-  <div id="site-border-bottom"></div>
-
-  <!-- Header Section -->
-  <header>
-    <nav class="navbar navbar-fixed-top navbar-default">
-      <div class="container">
-        <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-          <span class="sr-only">Toggle navigation</span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-          <span class="icon-bar"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbar-collapse">
-          <ul class="nav navbar-nav">
-            <li><a href="/index.html">01 : Home</a></li>
-            <li><a href="/about.html">02 : About me</a></li>
-            <li><a href="/research.html">03 : Research</a></li>
-            <li class="active"><a href="/Publications/bibliography.html">04 : Publications</a></li>
-            <li><a href="/experience.html">05 : Experience</a></li>
-            <li class="dropdown-submenu">
-              <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">06 : Outreach<span class="caret"></span></a>
-              <ul class="dropdown-menu">
-                <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
-                <li><a href="/outreach.html#Media">06.2 Media</a></li>
-                <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
-              </ul>
-            </li>
-            <li><a href="/contact.html">07 : Contact</a></li>
-          </ul>
+    <header>
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">Lola Fariñas</a>
+            </div>
+            <nav>
+                <ul>
+                    <li><a href="index.html">Index</a></li>
+                    <li><a href="aboutme.html">About Me</a></li>
+                    <li><a href="publications.html" class="active">Publications</a></li>
+                    <li><a href="projects.html">Projects</a></li>
+                    <li><a href="research.html">Research</a></li>
+                    <li><a href="blog.html">Blog/News</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
         </div>
-      </div>
-    </nav>
-  </header>
+    </header>
 
-  <!-- Publications Section -->
-  <div class="section-container">
-    <div class="container">
-      <h2 class="header text-center">Lola Fariñas' Publications</h2>
-      <p class="text-center">
-        Explore my published works. For a complete list, visit my 
-        <a href="https://scholar.google.com/citations?hl=es&user=RVHxAjEAAAAJ" target="_blank">Google Scholar</a> profile.
-      </p>
-      
-      <div class="searchbar">
-        <button type="button" class="btn btn-default" onclick="reset()">Reset</button>
-        <input type="text" class="bibtex_search form-control" id="searchbar" placeholder="Search publications">
-      </div>
+    <main>
+        <section class="content-section">
+            <h1>Publications</h1>
+            <div id="publications-list">
+                </div>
+        </section>
+          <script src="https://bibbase.org/service/mendeley/936784db-d164-39ed-9f38-d6ded1ef50a2?jsonp=1"></script>
 
-      <div id="bibtex_display">
-        <!-- Dynamic BibTeX content will be inserted here -->
-      </div>
-    </div>
-  </div>
+    </main>
 
-  <!-- Footer Section -->
-  <footer class="footer-container text-center">
-    <div class="container">
-      <p>© Lola Fariñas | Website created with 
-        <a href="http://www.mashup-template.com/" target="_blank">Mashup Template</a> / 
-        <a href="https://www.unsplash.com/" target="_blank">Unsplash</a>
-      </p>
-    </div>
-  </footer>
+    <footer>
+        <p>&copy; 2024 Lola Fariñas. All rights reserved.</p>
+    </footer>
 
-  <!-- JavaScript -->
-  <script>
-    $(document).ready(function () {
-      fetch('./LolaFarinas_biblio.bib')
-        .then(response => response.text())
-        .then(bibtexData => {
-          // Process BibTeX data here
-          var bibtexDisplay = $('#bibtex_display');
-          var entries = bibtexParse.toJSON(bibtexData);
-
-          // Sort entries by year in descending order
-          entries.sort((a, b) => b.entryTags.year - a.entryTags.year);
-
-          entries.forEach(entry => {
-            var html = `
-              <div class="publication-item">
-                <a href="${entry.entryTags.url}" class="bibtexVar">
-                  <span class="title">${entry.entryTags.title}</span>
-                </a>
-                <div class="authors">${entry.entryTags.author}</div>
-                <div class="journal-info">${entry.entryTags.journal}, ${entry.entryTags.year}</div>
-              </div>
-            `;
-            bibtexDisplay.append(html);
-          });
-
-          // Search functionality
-          $('#searchbar').on('input', function() {
-            var searchTerm = $(this).val().toLowerCase();
-            $('.publication-item').each(function() {
-              var text = $(this).text().toLowerCase();
-              $(this).toggle(text.includes(searchTerm));
-            });
-          });
-        })
-        .catch(error => console.error('Error loading .bib file:', error));
-    });
-
-    function reset() {
-      $('#searchbar').val('');
-      $('.publication-item').show();
-    }
-  </script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
 </body>
 </html>

@@ -1,43 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <!-- Meta tags for character set, viewport, and other properties -->
-  <meta charset="UTF-8">
-  <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width, initial-scale=1" name="viewport">
-  <meta content="description" name="description">
-  <meta name="google" content="notranslate">
-  <meta content="Mashup templates have been developed by Orson.io team" name="author">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate">
+    <meta content="Mashup templates have been developed by Orson.io team" name="author">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+    <link href="./assets/favicon.ico" rel="icon">
+    <title>Lola Fariñas, PhD.</title>   
 
-  <!-- Prevent tap highlight on Internet Explorer -->
-  <meta name="msapplication-tap-highlight" content="no">
-  
-  <!-- Favicon and title for the webpage -->
-  <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
-  <link href="./assets/favicon.ico" rel="icon">
-  <title>Lola Fariñas, PhD.</title>  
+    <link href="./main.3f6952e4.css" rel="stylesheet">
+    <link href="./custom-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
-  <!-- Include the main stylesheet for the webpage -->
-  <link href="./main.3f6952e4.css" rel="stylesheet">
+    <style>
+        /* Estilos adicionales para mejorar el diseño */
+        .section-container {
+            padding-top: 100px;
+        }
 
-  <!-- Custom CSS to prevent menu overlap -->
-  <style>
-    .section-container {
-      padding-top: 100px; /* Adjust this value based on navbar height */
-    }
+        .about-text {
+            font-size: 18px;
+            line-height: 1.6;
+        }
 
-    /* Improves readability */
-    .about-text {
-      font-size: 18px;
-      line-height: 1.6;
-    }
+        .about-image {
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
 
-    /* Image styling */
-    .about-image {
-      border-radius: 10px;
-      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-    }
-  </style>
+        .journey-gallery {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+            margin-top: 40px;
+        }
+        
+        .journey-gallery img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+    </style>
 </head>
 
 <body>
@@ -46,106 +59,114 @@
 <div id="site-border-top"></div>
 <div id="site-border-bottom"></div>
 
-<!-- Header section with navigation menu -->
-        </button>
-
-        <!-- Navigation links -->
-        <div class="sidebar">
-          <ul class="nav navbar-nav ">
-            <li><a href="/index.html" title="">01 : Home</a></li>
-            <li><a href="/about.html" title="">02 : About me</a></li>
-            <li><a href="/research.html" title="">03 : Research</a></li>
-            <li><a href="/Publications/bibliography.html" title="">04 : Publications</a></li>
-            <li class="dropdown-submenu">
-              <a href="/experience2.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="nav-label">05 : Experience</span><span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="/experience.html#Ordered">05.1 Education</a></li>
-                <li><a href="/experience.html#Number">05.2 Career</a></li>
-                <li><a href="/experience.html#Icons">05.3 Awards</a></li>
-              </ul>
-            </li>
-            <li class="dropdown-submenu">
-              <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                <span class="nav-label">06 : Outreach</span><span class="caret"></span>
-              </a>
-              <ul class="dropdown-menu">
-                <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
-                <li><a href="/outreach.html#Media">06.2 Media</a></li>
-                <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
-              </ul>
-            </li>
-            <li><a href="/contact.html" title="">07 : Contact</a></li>
-          </ul>
-        </div> 
-      </div>
+<header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">01 : Home</a></li>
+                    <li><a href="about.html">02 : About me</a></li>
+                    <li><a href="research.html">03 : Research</a></li>
+                    <li><a href="Publications/bibliography.html">04 : Publications</a></li>
+                    <li class="dropdown-submenu">
+                        <a href="experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">05 : Experience<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="experience.html#Professional-experience">05.1 Career</a></li>
+                            <li><a href="experience.html#Awards">05.2 Awards</a></li>
+                            <li><a href="experience.html#Education">05.3 Education</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">06 : Outreach<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="outreach.html#Talks">06.1 Talks</a></li>
+                            <li><a href="outreach.html#Media">06.2 Media</a></li>
+                            <li><a href="outreach.html#Podcast">06.3 Podcast</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">07 : Contact</a></li>
+                </ul>
+            </div>  
+        </div>
     </nav>
-  </header>
+</header>
 
 
-<!-- About Me section -->
 <div class="section-container">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <div class="section-container-spacer text-center">
-          <h1 class="h2"> About me</h1>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <div class="section-container-spacer text-center">
+                    <h1 class="h2">About me</h1>
+                </div>
+            </div>
         </div>
         
         <div class="row">
-          <div class="col-md-10 col-md-offset-1">
-            <div class="row">
-              <div class="col-xs-12 col-md-6">
-                <!-- About Me content -->
-                <h3> Exploring connections between seemingly unrelated concepts</h3>
-                <p class="about-text">
-                  As a scientist, I am passionate about uncovering the hidden relationships between phenomena that appear disconnected at first glance. 
-                  My work combines deep curiosity with rigorous methodology, bridging the gap between theoretical insights and practical applications.
-                </p>
-                <p class="about-text">
-                  With a background in physics and information technologies, I focus on interdisciplinary research that pushes the boundaries of knowledge. 
-                  Collaboration, innovation, and outreach are key pillars of my scientific journey.
-                </p>
-              </div>
-              <div class="col-xs-12 col-md-6">
-                <!-- About Me image -->
-                <img src="./assets/images/Lola-Nobel.png" class="img-responsive about-image" alt="Lola Fariñas, PhD">
-              </div>
+            <div class="col-md-10 col-md-offset-1">
+                <div class="row">
+                    <div class="col-xs-12 col-md-6">
+                        <h3> My Scientific Journey </h3>
+                        <p class="about-text">
+                            As a physicist and researcher, my career is a testament to the power of curiosity and interdisciplinary collaboration. My journey began with a Ph.D. in Physics from the Technical University of Valencia, where I first learned to **uncover the hidden connections between seemingly unrelated concepts**.
+                        </p>
+                        <p class="about-text">
+                            I am a strong believer in research with real-world impact. This passion led me to specialize in **Non-Destructive Testing**, where I apply advanced ultrasonic and acoustic technologies to solve practical challenges. Whether it's evaluating the quality of crops or assessing the health of battery cells, my work bridges the gap between theoretical knowledge and tangible, real-world applications.
+                        </p>
+                        <p class="about-text">
+                            My work is not just about data and equations; it's about connecting with people. I am passionate about **science outreach** and sharing the excitement of discovery with the public. Through every project, I seek to inspire the next generation of scientists and show how fundamental research can lead to groundbreaking innovations.
+                        </p>
+                    </div>
+
+                    <div class="col-xs-12 col-md-6">
+                        <img src="./assets/images/Lola-Nobel.png" class="img-responsive about-image" alt="Lola Fariñas, PhD">
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <hr>
+                        <h3 style="margin-top: 40px;">My Global Experience</h3>
+                        <p>A visual timeline of my academic and research collaborations around the world.</p>
+                        <div class="journey-gallery">
+                            <img src="./assets/images/USA-lab.jpg" alt="Lab work in the USA">
+                            <img src="./assets/images/travels-japan.jpg" alt="Conference in Japan">
+                            <img src="./assets/images/collaboration-group.jpg" alt="Collaboration with research group">
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-12">
+                        <hr>
+                        <h3 style="margin-top: 40px;">Beyond the Lab</h3>
+                        <p class="about-text">
+                            My journey is driven by a profound belief that science should be a force for positive change. Each project, collaboration, and discovery is a step toward building a better, more sustainable future. My vision is to continue bridging diverse fields and inspire others to see the world not just as it is, but as it could be.
+                        </p>
+                    </div>
+                </div>
+
             </div>
-          </div>
         </div>
-     </div>
     </div>
-  </div>
 </div>
 
-<!-- Footer section -->
 <footer class="footer-container text-center">
-  <div class="container">
-    <div class="row">
-      <div class="col-xs-12">
-        <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/" title="Create website with free HTML template">Mashup Template</a>/<a href="https://www.unsplash.com/" title="Beautiful Free Images">Unsplash</a></p>
-      </div>
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a>/<a href="https://www.unsplash.com/">Unsplash</a></p>
+            </div>
+        </div>
     </div>
-  </div>
 </footer>
 
-<!-- JavaScript for page initialization -->
-<script>
-  document.addEventListener("DOMContentLoaded", function (event) {
-    navActivePage();
-  });
-</script>
-
-<!-- Google Analytics (You need to replace UA-XXXXX-X with your own site's ID) -->
-<!--
-<script>
-  (function (i, s, o, g, r, a, m) {
-    i['GoogleAnalyticsObject'] = r; i[r] = i[r] || function () {
-      (i[r].q = i[r].q || []).push(arguments)
-    }, i[r].l = 1 * new Date(); a = s.createElement(o),
-      m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
-  })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
-  ga('create', 'UA-XXXXX-X', 'auto');
-  ga
+<script type="text/javascript" src="./main.70a66962.js"></script>
+</body>
+</html>

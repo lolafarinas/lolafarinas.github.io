@@ -4,9 +4,9 @@
   <!-- Meta tags for character set, viewport, and other properties -->
   <meta charset="UTF-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
-  <meta content="width=device-width,initial-scale=1" name="viewport">
+  <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="description" name="description">
-  <meta name="google" content="notranslate" />
+  <meta name="google" content="notranslate">
   <meta content="Mashup templates have been developed by Orson.io team" name="author">
 
   <!-- Prevent tap highlight on Internet Explorer -->
@@ -19,91 +19,105 @@
 
   <!-- Include the main stylesheet for the webpage -->
   <link href="./main.3f6952e4.css" rel="stylesheet">
+
+  <!-- Custom CSS to prevent menu overlap -->
+  <style>
+    .section-container {
+      padding-top: 100px; /* Adjust this value based on navbar height */
+    }
+
+    /* Improves readability */
+    .about-text {
+      font-size: 18px;
+      line-height: 1.6;
+    }
+
+    /* Image styling */
+    .about-image {
+      border-radius: 10px;
+      box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+    }
+  </style>
 </head>
 
-<body class="">
+<body>
 <div id="site-border-left"></div>
 <div id="site-border-right"></div>
 <div id="site-border-top"></div>
 <div id="site-border-bottom"></div>
 
 <!-- Header section with navigation menu -->
-<header>
-  <nav class="navbar navbar-fixed-top navbar-default">
-    <div class="container">
-      <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-        <span class="sr-only">Toggle navigation</span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-        <span class="icon-bar"></span>
-      </button>
+        </button>
 
-      <!-- Navigation menu -->
-      <div class="collapse navbar-collapse" id="navbar-collapse">
-        <ul class="nav navbar-nav">
-          <li><a href="/index.html" title="">01 : Home</a></li>
-          <li><a href="/about.html" title="">02 : About me</a></li>
-          <li><a href="/research.html" title="">03 : Research</a></li>
-          <li><a href="Publications/bibliography_simple.html" title="">04 : Publications</a></li>
-
-          <!-- Submenu for "Experience" -->
-          <li class="dropdown-submenu">
-            <a href="/experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="nav-label">05 : Experience</span><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/experience.html#Ordered">05.1 Education</a></li>
-              <li><a href="/experience.html#Number">05.2 Career</a></li>
-              <li><a href="/experience.html#Icons">05.3 Awards</a></li>
-            </ul>
-          </li>
-          <!-- Submenu for "Outreach" -->
-          <li class="dropdown-submenu">
-            <a href="/outreach.html" class a="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-              <span class="nav-label">06 : Outreach</span><span class="caret"></span>
-            </a>
-            <ul class="dropdown-menu">
-              <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
-              <li><a href="/outreach.html#Media">06.2 Media</a></li>
-              <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
-            </ul>
-          </li>
-          <li><a href="/contact.html" title="">07 : Contact</a></li>
-          <li><a href="/components.html" title="">08 : Components</a></li>
-        </ul>
+        <!-- Navigation links -->
+        <div class="sidebar">
+          <ul class="nav navbar-nav ">
+            <li><a href="/index.html" title="">01 : Home</a></li>
+            <li><a href="/about.html" title="">02 : About me</a></li>
+            <li><a href="/research.html" title="">03 : Research</a></li>
+            <li><a href="/Publications/bibliography.html" title="">04 : Publications</a></li>
+            <li class="dropdown-submenu">
+              <a href="/experience2.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="nav-label">05 : Experience</span><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/experience.html#Ordered">05.1 Education</a></li>
+                <li><a href="/experience.html#Number">05.2 Career</a></li>
+                <li><a href="/experience.html#Icons">05.3 Awards</a></li>
+              </ul>
+            </li>
+            <li class="dropdown-submenu">
+              <a href="/outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                <span class="nav-label">06 : Outreach</span><span class="caret"></span>
+              </a>
+              <ul class="dropdown-menu">
+                <li><a href="/outreach.html#Talks">06.1 Talks</a></li>
+                <li><a href="/outreach.html#Media">06.2 Media</a></li>
+                <li><a href="/outreach.html#Podcast">06.3 Podcast</a></li>
+              </ul>
+            </li>
+            <li><a href="/contact.html" title="">07 : Contact</a></li>
+          </ul>
+        </div> 
       </div>
-    </div>
-  </nav>
-</header>
+    </nav>
+  </header>
+
 
 <!-- About Me section -->
 <div class="section-container">
-    <div class="container">
-      <div class="row">
-        <div class="col-xs-12">
-          <div class="section-container-spacer text-center">
-            <h1 class="h2">01 : About me</h1>
-          </div>
-          
-          <div class="row">
-            <div class="col-md-10 col-md-offset-1">
-              <div class="row">
-                <div class="col-xs-12 col-md-6">
-                  <!-- About Me content -->
-                  <h3> Interested in finding relationships between things that apparently haven't any</h3>
-                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas luctus at sem quis varius. 
-                  Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Cras ultrices hendrerit nisl.</p>
-                </div>
-                <div class="col-xs-12 col-md-6">
-                  <!-- About Me image -->
-                  <img src="./assets/images/Lola-Nobel.png" class="img-responsive" alt="">
-                </div>
+  <div class="container">
+    <div class="row">
+      <div class="col-xs-12">
+        <div class="section-container-spacer text-center">
+          <h1 class="h2"> About me</h1>
+        </div>
+        
+        <div class="row">
+          <div class="col-md-10 col-md-offset-1">
+            <div class="row">
+              <div class="col-xs-12 col-md-6">
+                <!-- About Me content -->
+                <h3> Exploring connections between seemingly unrelated concepts</h3>
+                <p class="about-text">
+                  As a scientist, I am passionate about uncovering the hidden relationships between phenomena that appear disconnected at first glance. 
+                  My work combines deep curiosity with rigorous methodology, bridging the gap between theoretical insights and practical applications.
+                </p>
+                <p class="about-text">
+                  With a background in physics and information technologies, I focus on interdisciplinary research that pushes the boundaries of knowledge. 
+                  Collaboration, innovation, and outreach are key pillars of my scientific journey.
+                </p>
+              </div>
+              <div class="col-xs-12 col-md-6">
+                <!-- About Me image -->
+                <img src="./assets/images/Lola-Nobel.png" class="img-responsive about-image" alt="Lola Fariñas, PhD">
               </div>
             </div>
           </div>
-       </div>
-      </div>
+        </div>
+     </div>
     </div>
+  </div>
 </div>
 
 <!-- Footer section -->
@@ -134,11 +148,4 @@
       m = s.getElementsByTagName(o)[0]; a.async = 1; a.src = g; m.parentNode.insertBefore(a, m)
   })(window, document, 'script', '//www.google-analytics.com/analytics.js', 'ga');
   ga('create', 'UA-XXXXX-X', 'auto');
-  ga('send', pageview');
-</script>
--->
-
-<!-- JavaScript for additional functionality -->
-<script type="text/javascript" src="./main.70a66962.js"></script>
-</body>
-</html>
+  ga

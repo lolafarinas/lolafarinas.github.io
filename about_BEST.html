@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate">
+    <meta content="Mashup templates have been developed by Orson.io team" name="author">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
+    <link href="./assets/favicon.ico" rel="icon">
+    <title>Lola Fariñas, PhD.</title>   
+
+    <link href="./main.3f6952e4.css" rel="stylesheet">
+    <link href="./custom-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+    <style>
+        /* Estilos adicionales para la sección About */
+        .section-container {
+            padding-top: 100px;
+        }
+
+        .about-text {
+            font-size: 18px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .about-image {
+            border-radius: 10px;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            width: 100%;
+            height: auto;
+            margin-bottom: 20px;
+        }
+
+        /* Masonry layout para la journey-gallery */
+        .journey-gallery {
+            column-count: 2; /* Puedes cambiar a 3 si prefieres más columnas */
+            column-gap: 20px;
+            margin-top: 25px;
+        }
+
+        .journey-gallery img {
+            width: 100%;
+            margin-bottom: 20px;
+            display: block;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            background-color: #f9f9f9;
+        }
+
+        .journey-gallery img:hover {
+            transform: scale(1.03);
+        }
+
+        /* Sección Fun Facts */
+        .fun-facts {
+            display: flex;
+            justify-content: center;
+            gap: 30px;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        .fun-fact {
+            flex: 1 1 220px;
+            background-color: #f9f9f9;
+            padding: 15px;
+            border-radius: 12px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            font-size: 16px;
+        }
+    </style>
+</head>
+
+<body>
+<div id="site-border-left"></div>
+<div id="site-border-right"></div>
+<div id="site-border-top"></div>
+<div id="site-border-bottom"></div>
+
+<header>
+    <nav class="navbar navbar-fixed-top navbar-default">
+        <div class="container">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="index.html">01 : Home</a></li>
+                    <li><a href="about.html">02 : About me</a></li>
+                    <li><a href="research.html">03 : Research</a></li>
+                    <li><a href="Publications/bibliography.html">04 : Publications</a></li>
+                    <li class="dropdown-submenu">
+                        <a href="experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">05 : Experience<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="experience.html#Professional-experience">05.1 Career</a></li>
+                            <li><a href="experience.html#Awards">05.2 Awards</a></li>
+                            <li><a href="experience.html#Education">05.3 Education</a></li>
+                        </ul>
+                    </li>
+                    <li class="dropdown-submenu">
+                        <a href="outreach.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">06 : Outreach<span class="caret"></span></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="outreach.html#Talks">06.1 Talks</a></li>
+                            <li><a href="outreach.html#Media">06.2 Media</a></li>
+                            <li><a href="outreach.html#Podcast">06.3 Podcast</a></li>
+                        </ul>
+                    </li>
+                    <li><a href="contact.html">07 : Contact</a></li>
+                </ul>
+            </div>  
+        </div>
+    </nav>
+</header>
+
+<div class="section-container">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <div class="section-container-spacer">
+                    <h1 class="h2">About Me</h1>
+                    <p style="font-size:18px;color:#555;">
+                        Physicist, researcher, and science communicator — exploring how sound and technology can shape a better future.
+                    </p>
+                </div>
+            </div>
+        </div>
+        
+        <div class="row">
+            <!-- Columna izquierda con texto -->
+            <div class="col-xs-12 col-md-6">
+                <h3> My Scientific Journey </h3>
+                <p class="about-text">
+                    Curiosity has always guided my path. I began my scientific journey with a Ph.D. in Physics at the Technical University of Valencia, where I discovered how physics can uncover the hidden stories behind materials and technology.
+                </p>
+                <p class="about-text">
+                    Today, I specialize in <strong>Non-Destructive Testing</strong>, using ultrasound and acoustic techniques to reveal what lies beneath the surface — from assessing the health of battery cells to improving agricultural quality. My goal is simple: turning scientific insights into real-world solutions.
+                </p>
+                <p class="about-text">
+                    Beyond research, I am passionate about <strong>science outreach</strong>. Through talks, media, and workshops, I love sharing the excitement of discovery and inspiring the next generation of scientists.
+                </p>
+            </div>
+
+            <!-- Columna derecha con imagen principal -->
+            <div class="col-xs-12 col-md-6">
+                <img src="./assets/images/Lola-Nobel.png" class="img-responsive about-image" alt="Lola Fariñas, PhD">
+            </div>
+        </div>
+
+        <!-- Galería tipo masonry -->
+        <div class="row">
+            <div class="col-xs-12 text-center">
+                <hr>
+                <h3 style="margin-top: 40px;">My Global Experience</h3>
+                <p>A visual snapshot of collaborations, conferences, and research projects around the world.</p>
+                <div class="journey-gallery">
+                    <img src="./assets/images/LOLAme_MIT.jpg" alt="Collaboration 1">
+                    <img src="./assets/images/LOLAme_Google_01.jpg" alt="Conference">
+                    <img src="./assets/images/LOLAme_masks_01.jpeg" alt="Lab work">
+                    <img src="./assets/images/LOLAme_CitRUS_01.jpg" alt="Team research">
+                </div>
+            </div>
+        </div>
+
+<!-- Beyond the Lab con nueva galería -->
+        <div class="row">
+            <div class="col-xs-12">
+                <hr>
+                <h3 style="margin-top: 40px;">Beyond the Lab</h3>
+                <p class="about-text">
+                    Science is a big part of who I am, but not the whole story. I love exploring new cultures, capturing moments through photography, and discovering innovative ways sound shapes our lives — from music to cutting-edge technologies.
+                </p>
+                <div class="fun-facts">
+                    <div class="fun-fact">🌍 Collaborated with researchers from 7+ countries</div>
+                    <div class="fun-fact">🎙 Passionate about science communication & outreach</div>
+                    <div class="fun-fact">📷 Loves photography, traveling & capturing stories</div>
+                </div>
+                <div class="beyond-gallery">
+                    <img src="./assets/images/LOLAme_podcast.jpg" alt="Hiking adventure">
+                    <img src="./assets/images/LOLAme_tenis.jpg" alt="Photography moment">
+                    <img src="./assets/images/LOLAme_Behobia.png" alt="Music passion">
+                    <img src="./assets/images/LOLAme_SFO.jpeg" alt="Travel and exploration">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer-container text-center">
+    <div class="container">
+        <div class="row">
+            <div class="col-xs-12">
+                <p>© LOLA FARIÑAS | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a>/<a href="https://www.unsplash.com/">Unsplash</a></p>
+            </div>
+        </div>
+    </div>
+</footer>
+
+<script type="text/javascript" src="./main.70a66962.js"></script>
+</body>
+</html>
+
+<script type="text/javascript" src="./main.70a66962.js"></script>
+</body>
+</html>

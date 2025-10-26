@@ -1,106 +1,133 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta content="IE=edge" http-equiv="X-UA-Compatible">
-    <meta content="width=device-width,initial-scale=1" name="viewport">
-    <meta content="description" name="description">
-    <meta name="google" content="notranslate" />
-    <meta content="Mashup templates have been developed by Orson.io team" name="author">
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width,initial-scale=1" name="viewport">
+    <meta content="description" name="description">
+    <meta name="google" content="notranslate" />
+    <meta content="Mashup templates have been developed by Orson.io team" name="author">
 
-    <meta name="msapplication-tap-highlight" content="no">
-    
-    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-icon-180x180.png">
-    <link href="../assets/favicon.ico" rel="icon">
+    <meta name="msapplication-tap-highlight" content="no">
+    
+    <link rel="apple-touch-icon" sizes="180x180" href="../assets/apple-icon-180x180.png">
+    <link href="../assets/favicon.ico" rel="icon">
 
-    <title>NDT Research - Lola Fariñas, PhD.</title>   
+    <title>NDT Research - Lola Fariñas, PhD.</title>   
 
-    <link href="../main.3f6952e4.css" rel="stylesheet">
-    <link href="../custom-style.css" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
-    
-    <style>
-        /* Estilos de tabla del código anterior (si los necesitas) */
-        .experience-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
-        .experience-table th, .experience-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        .experience-table th {
-            background-color: #f2f2f2;
-            text-align: left;
-        }
-        .experience-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .experience-table tr:hover {
-            background-color: #ddd;
-        }
+    <link href="../main.3f6952e4.css" rel="stylesheet">
+    <link href="../custom-style.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+    
+    <style>
+        /* Estilos de tabla del código anterior (si los necesitas) */
+        .experience-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+        .experience-table th, .experience-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+        .experience-table th {
+            background-color: #f2f2f2;
+            text-align: left;
+        }
+        .experience-table tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+        .experience-table tr:hover {
+            background-color: #ddd;
+        }
 
-        /* Estilos para las tarjetas de proyectos */
-        .card {
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            margin-bottom: 20px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        /* Estilos para las tarjetas de proyectos (Ajustados para altura uniforme) */
+        .card {
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            margin-bottom: 20px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+            height: 100%; /* Hacemos la tarjeta flexible en altura */
+            display: flex;
+            flex-direction: column;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
         }
-        .card img {
-            border-top-left-radius: 4px;
-            border-top-right-radius: 4px;
-            width: 100%;
-            height: auto;
+        
+        .card img {
+            border-top-left-radius: 4px;
+            border-top-right-radius: 4px;
+            width: 100%;
+            height: 200px; /* ALTURA FIJA para la imagen */
+            object-fit: contain; /* Ajusta la imagen completa sin recortar */
+            background-color: #f8f8f8;
+            padding: 10px;
+        }
+
+        .card-body {
+            padding: 15px;
+            flex-grow: 1; /* Permite que el cuerpo ocupe el espacio restante */
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between; /* Empuja el botón hacia abajo */
+        }
+        .card h3 {
+            margin-top: 0;
+            font-size: 1.5em;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .card p {
+            color: #666;
+            flex-grow: 1; /* Permite que el párrafo ocupe el espacio disponible */
+            margin-bottom: 15px;
+        }
+        /* Usamos el estilo del botón principal de tu web */
+        .btn-primary {
+            background-color: #007bff;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            text-decoration: none;
+            border-radius: 4px;
+            display: inline-block;
+            margin-top: 10px;
+        }
+        .btn-primary:hover {
+            background-color: #0056b3;
+        }
+        /* Estilo para el icono del título principal */
+        .header-icon {
+            color: #007bff; /* Mantenemos el color principal de tu tema */
+            margin-right: 10px;
         }
-        .card-body {
-            padding: 15px;
-        }
-        .card h3 {
-            margin-top: 0;
-            font-size: 1.5em;
-            color: #333;
-        }
-        .card p {
-            color: #666;
-        }
-        .btn-default {
-            background-color: #007bff;
-            color: #fff;
-            border: none;
-            padding: 10px 20px;
-            text-decoration: none;
-            border-radius: 4px;
-            display: inline-block;
-            margin-top: 10px;
-        }
-        .btn-default:hover {
-            background-color: #0056b3;
-        }
-    </style>
+    </style>
 </head>
 <body>
-    <div id="site-border-left"></div>
-    <div id="site-border-right"></div>
-    <div id="site-border-top"></div>
-    <div id="site-border-bottom"></div>
+    <div id="site-border-left"></div>
+    <div id="site-border-right"></div>
+    <div id="site-border-top"></div>
+    <div id="site-border-bottom"></div>
 
-    <header>
-        <nav class="navbar navbar-fixed-top navbar-default">
-            <div class="container">
-                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
-                    <span class="sr-only">Toggle navigation</span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                    <span class="icon-bar"></span>
-                </button>
+    <header>
+        <nav class="navbar navbar-fixed-top navbar-default">
+            <div class="container">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
 
-                <div class="collapse navbar-collapse" id="navbar-collapse">
-                    <ul class="nav navbar-nav">
+                <div class="collapse navbar-collapse" id="navbar-collapse">
+                    <ul class="nav navbar-nav">
                         <li><a href="../index.html">01 : Home</a></li>
                         <li><a href="../about.html">02 : About me</a></li>
-                        <li><a href="../research.html">03 : Research</a></li>
+                        <li class="active"><a href="../research.html">03 : Research</a></li>
                         <li><a href="../Publications/bibliography.html">04 : Publications</a></li>
                         <li class="dropdown-submenu">
                             <a href="../experience.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">05 : Experience<span class="caret"></span></a>
@@ -119,48 +146,48 @@
                             </ul>
                         </li>
                         <li><a href="../contact.html">07 : Contact</a></li>
-                    </ul>
-                </div>  
-            </div>
-        </nav>
-    </header>
+                    </ul>
+                </div>  
+            </div>
+        </nav>
+    </header>
 
-    <main>
-        <div class="section-container">
-            <div class="container">
-                <div class="row">
-                    <div class="col-xs-12 text-center">
-                        <h1 class="h2">Material characterization / NDT projects</h1>
-                        <p>A list of projects related to my research in NDT.</p>
-                    </div>
-                </div>
+    <main>
+        <div class="section-container">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xs-12 text-center">
+                        <h1 class="h2"><i class="fas fa-cog header-icon"></i> Material Characterization / NDT Projects</h1>
+                        <p>A list of projects related to Non-Destructive Testing (NDT) and material characterization.</p>
+                    </div>
+                </div>
 
-                <div class="row">
-                    <div class="col-md-4">
-                        <div class="card">
-                            <img src="../assets/images/2024_MOSINCO-logo_LR.png" class="img-responsive" alt="MOSINCO project">
-                            <div class="card-body">
-                                <h3>MOSINCO</h3>
-                                <p>Contactless monitoring of thermoset composites.</p>
-                                <a href="../projects/2024_MOSINCO.html" class="btn btn-default">Learn more</a>
-                            </div>
-                        </div>
-                    </div>
-                    </div>
-            </div>
-        </div>
-    </main>
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card">
+                            <img src="../assets/images/2024_MOSINCO-logo_LR.png" class="img-responsive" alt="MOSINCO project logo">
+                            <div class="card-body">
+                                <h3>MOSINCO</h3>
+                                <p>Contactless monitoring of thermoset composites. </p>
+                                <a href="../projects/2024_MOSINCO.html" class="btn btn-primary">Learn more</a>
+                            </div>
+                        </div>
+                    </div>
+                    </div>
+            </div>
+        </div>
+    </main>
 
-    <footer class="footer-container text-center">
-        <div class="container">
-            <div class="row">
-                <div class="col-xs-12">
-                    <p>© Lola Fariñas | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a>/<a href="https://www.unsplash.com/">Unsplash</a></p>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <footer class="footer-container text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-xs-12">
+                    <p>© Lola Fariñas | Website created with <a href="http://www.mashup-template.com/">Mashup Template</a>/<a href="https://www.unsplash.com/">Unsplash</a></p>
+                </div>
+                </div>
+        </div>
+    </footer>
 
-    <script type="text/javascript" src="../main.70a66962.js"></script>
+    <script type="text/javascript" src="../main.70a66962.js"></script>
 </body>
 </html>

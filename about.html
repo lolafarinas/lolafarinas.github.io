@@ -77,38 +77,35 @@
             font-size: 16px;
         }
 
-        /* Estilos ajustados para la sección "Beyond the Lab" (para manejar fotos verticales) */
+        /* Estilos ajustados para la sección "Beyond the Lab" con diseño Masonry/Columnas */
         .beyond-gallery {
-            display: flex;
-            flex-wrap: wrap; 
-            justify-content: space-between; 
-            gap: 15px; 
+            column-count: 2; /* 2 columnas para escritorio */
+            column-gap: 20px;
             margin-top: 30px;
         }
 
         .beyond-gallery img {
-            /* Calcula el ancho para que quepan 4 imágenes por fila, restando el espacio del gap */
-            width: calc(25% - 15px); 
-            max-width: 100%; 
-            /* ALTURA MÁXIMA FIJA Y AJUSTE DE OBJETO para alinear las imágenes */
-            height: 250px; 
-            object-fit: cover; /* Recorta ligeramente si es necesario para llenar la altura y el ancho */
-            display: block;
+            width: 100%; /* Las imágenes ocupan todo el ancho de su columna */
+            height: auto; /* Mantienen su relación de aspecto original */
+            margin-bottom: 20px; /* Espacio entre imágenes dentro de la columna */
+            display: block; /* Asegura que cada imagen es un bloque para el flujo de columnas */
             border-radius: 8px;
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             transition: transform 0.3s ease;
+            background-color: #f9f9f9; /* Fondo en caso de que la imagen sea PNG transparente */
         }
 
         .beyond-gallery img:hover {
             transform: scale(1.03);
         }
 
-        /* Media Query para asegurar que en pantallas pequeñas las imágenes ocupen todo el ancho */
+        /* Media Query para pantallas pequeñas (móviles) */
         @media (max-width: 768px) {
+            .beyond-gallery {
+                column-count: 1; /* Una sola columna en móvil */
+            }
             .beyond-gallery img {
                 width: 100%;
-                height: auto; /* Retorna a altura automática en móvil */
-                object-fit: contain; /* Ajusta la imagen completa en móvil */
             }
         }
     </style>
@@ -223,10 +220,10 @@
                     <div class="fun-fact">📷 Loves photography, traveling & capturing stories</div>
                 </div>
                 <div class="beyond-gallery">
-                    <img src="./assets/images/LOLAme_podcast.jpg" alt="Hiking adventure">
-                    <img src="./assets/images/LOLAme_tenis.jpg" alt="Photography moment">
-                    <img src="./assets/images/LOLAme_Behobia.png" alt="Music passion">
+                    <img src="./assets/images/LOLAme_podcast.jpg" alt="Podcast recording">
+                    <img src="./assets/images/LOLAme_tenis.jpg" alt="Playing tennis">
                     <img src="./assets/images/LOLAme_SFO.jpeg" alt="Travel and exploration">
+                    <img src="./assets/images/LOLAme_Behobia.png" alt="Running a race">
                 </div>
             </div>
         </div>

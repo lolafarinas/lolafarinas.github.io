@@ -13,38 +13,29 @@
     <link rel="apple-touch-icon" sizes="180x180" href="./assets/apple-icon-180x180.png">
     <link href="./assets/favicon.ico" rel="icon">
 
-    <title>Lola Fariñas, PhD. - Experience</title>   
+    <title>Lola Fariñas, PhD. - Contact</title>    
 
     <link href="./main.3f6952e4.css" rel="stylesheet">
     <link href="./custom-style.css" rel="stylesheet">
-
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
     
     <style>
-        /* Estilos adicionales para mejorar la apariencia */
         .template-title {
             font-size: 2em;
             margin-bottom: 20px;
             color: #333;
         }
-        .experience-table {
+        /* Ajuste específico para foto horizontal 4:3 */
+        .profile-img-container {
             width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
+            margin-top: 20px;
         }
-        .experience-table th, .experience-table td {
-            border: 1px solid #ddd;
-            padding: 8px;
-        }
-        .experience-table th {
-            background-color: #f2f2f2;
-            text-align: left;
-        }
-        .experience-table tr:nth-child(even) {
-            background-color: #f9f9f9;
-        }
-        .experience-table tr:hover {
-            background-color: #ddd;
+        .profile-img {
+            width: 100%;
+            height: auto; /* Mantiene la relación 4:3 sin estirar */
+            border-radius: 10px; /* Bordes suaves modernos */
+            box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+            display: block;
         }
     </style>
 </head>
@@ -98,7 +89,7 @@
         <section class="section-container">
             <div class="container">
                 <div class="row">
-                    <div class="col-xs-12">
+                    <div class="col-xs-12 col-md-8">
                         <div class="section-container-spacer">
                             <h1 class="h2">Contact</h1>
                             <p>The best way to contact me is via email. Feel free to reach out if you have any questions or collaboration inquiries.</p>
@@ -110,6 +101,12 @@
                             <li><a href="https://orcid.org/0000-0001-6370-1283" target="_blank"><i class="fab fa-orcid"></i> ORCID</a></li>
                             <li><a href="https://scholar.google.com/citations?user=RVHxAjEAAAAJ&hl" target="_blank"><i class="fas fa-graduation-cap"></i> Google Scholar</a></li>
                         </ul>
+                    </div>
+                    
+                    <div class="col-xs-12 col-md-4">
+                        <div class="profile-img-container">
+                            <img src="./assets/images/2025_IKERBASQUE-Lola_02.jpg" class="img-responsive profile-img" alt="Lola Fariñas">
+                        </div>
                     </div>
                 </div>
             </div>
